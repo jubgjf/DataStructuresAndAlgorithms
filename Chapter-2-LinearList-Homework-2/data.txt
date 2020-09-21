@@ -1,0 +1,4 @@
+headphone Sony 1899 10
+laptop Apple 23000 5
+water Farmer's_Spring 2 1000
+computer Dell 13999 10
