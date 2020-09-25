@@ -34,3 +34,7 @@
 #### [练习四](./Chapter-2-LinearList-Practice-4)
 
 - [ ] 环形链表基本操作
+
+#### [练习五](./Chapter-2-LinearList-Practice-5)
+
+- [ ] 链表应用 -> 多项式的代数运算
