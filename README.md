@@ -30,3 +30,7 @@
 #### [练习三](./Chapter-2-LinearList-Practice-3)
 
 - [x] 栈的应用 -> 进制转换
+
+#### [练习四](./Chapter-2-LinearList-Practice-4)
+
+- [ ] 环形链表基本操作
