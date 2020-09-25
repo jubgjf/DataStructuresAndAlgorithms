@@ -7,9 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Homewo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Homework-2", "Chapter-2-LinearList-Homework-2\Chapter-2-LinearList-Homework-2.vcxproj", "{82EBEBD6-F97A-4ACD-AAF5-26DA87927890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter-2-LinearList-Homework-2-CSharp", "Chapter-2-LinearList-Homework-2-CSharp\Chapter-2-LinearList-Homework-2-CSharp.csproj", "{EDA6C3B1-A9FA-4359-9DE8-66D8CC8F314D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter-2-LinearList-Homework-2-CSharp", "Chapter-2-LinearList-Homework-2-CSharp\Chapter-2-LinearList-Homework-2-CSharp.csproj", "{EDA6C3B1-A9FA-4359-9DE8-66D8CC8F314D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-1", "Chapter-2-LinearList-Practice-1\Chapter-2-LinearList-Practice-1.vcxproj", "{658600E2-3AD0-4109-B6CC-1F9AC9BC9B35}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-2", "Chapter-2-LinearList-Practice-2\Chapter-2-LinearList-Practice-2.vcxproj", "{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,16 @@ Global
 		{658600E2-3AD0-4109-B6CC-1F9AC9BC9B35}.Release|x64.Build.0 = Release|x64
 		{658600E2-3AD0-4109-B6CC-1F9AC9BC9B35}.Release|x86.ActiveCfg = Release|Win32
 		{658600E2-3AD0-4109-B6CC-1F9AC9BC9B35}.Release|x86.Build.0 = Release|Win32
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Debug|x64.ActiveCfg = Debug|x64
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Debug|x64.Build.0 = Debug|x64
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Debug|x86.ActiveCfg = Debug|Win32
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Debug|x86.Build.0 = Debug|Win32
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Release|Any CPU.ActiveCfg = Release|Win32
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Release|x64.ActiveCfg = Release|x64
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Release|x64.Build.0 = Release|x64
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Release|x86.ActiveCfg = Release|Win32
+		{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

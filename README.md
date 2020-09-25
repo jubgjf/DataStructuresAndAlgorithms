@@ -19,3 +19,13 @@
 
 - 第二章 线性表 作业二
   - 家电管理系统
+
+### Chapter-2-LinearList-Practice-1 [未完成]
+
+- 第二章 线性表 练习一
+  - 静态链表基本操作
+
+### Chapter-2-LinearList-Practice-2 [已完成]
+
+- 第二章 线性表 练习二
+  - 栈的基本操作
