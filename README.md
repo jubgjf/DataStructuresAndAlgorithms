@@ -16,6 +16,7 @@
 - [ ] 家电管理系统
 
 #### [作业二](./Chapter-2-LinearList-Homework-2-CSharp)
+
 - [x] 家电管理系统
 
 #### [练习一](./Chapter-2-LinearList-Practice-1)
@@ -25,3 +26,7 @@
 #### [练习二](./Chapter-2-LinearList-Practice-2)
 
 - [x] 栈的基本操作
+
+#### [练习三](./Chapter-2-LinearList-Practice-3)
+
+- [x] 栈的应用 -> 进制转换
