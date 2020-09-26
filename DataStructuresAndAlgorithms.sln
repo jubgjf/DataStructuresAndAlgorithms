@@ -3,21 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Homework-1", "Chapter-2-LinearList-Homework-1\Chapter-2-LinearList-Homework-1.vcxproj", "{4109863F-6E7C-4F40-BC54-D39E715A25BC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Homework-1", "Chapter-2-LinearList\Homework\Chapter-2-LinearList-Homework-1\Chapter-2-LinearList-Homework-1.vcxproj", "{4109863F-6E7C-4F40-BC54-D39E715A25BC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Homework-2", "Chapter-2-LinearList-Homework-2\Chapter-2-LinearList-Homework-2.vcxproj", "{82EBEBD6-F97A-4ACD-AAF5-26DA87927890}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Homework-2", "Chapter-2-LinearList\Homework\Chapter-2-LinearList-Homework-2\Chapter-2-LinearList-Homework-2.vcxproj", "{82EBEBD6-F97A-4ACD-AAF5-26DA87927890}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter-2-LinearList-Homework-2-CSharp", "Chapter-2-LinearList-Homework-2-CSharp\Chapter-2-LinearList-Homework-2-CSharp.csproj", "{EDA6C3B1-A9FA-4359-9DE8-66D8CC8F314D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter-2-LinearList-Homework-2-CSharp", "Chapter-2-LinearList\Homework\Chapter-2-LinearList-Homework-2-CSharp\Chapter-2-LinearList-Homework-2-CSharp.csproj", "{EDA6C3B1-A9FA-4359-9DE8-66D8CC8F314D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-1", "Chapter-2-LinearList-Practice-1\Chapter-2-LinearList-Practice-1.vcxproj", "{658600E2-3AD0-4109-B6CC-1F9AC9BC9B35}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-1", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-1\Chapter-2-LinearList-Practice-1.vcxproj", "{658600E2-3AD0-4109-B6CC-1F9AC9BC9B35}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-2", "Chapter-2-LinearList-Practice-2\Chapter-2-LinearList-Practice-2.vcxproj", "{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-2", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-2\Chapter-2-LinearList-Practice-2.vcxproj", "{AFDABB7F-F313-4E99-89E1-F6FFDF43ED2E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-3", "Chapter-2-LinearList-Practice-3\Chapter-2-LinearList-Practice-3.vcxproj", "{541E7027-2737-462B-9E96-95CE21216425}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-3", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-3\Chapter-2-LinearList-Practice-3.vcxproj", "{541E7027-2737-462B-9E96-95CE21216425}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-4", "Chapter-2-LinearList-Practice-4\Chapter-2-LinearList-Practice-4.vcxproj", "{1CED4DB1-F14A-4180-AE43-6C2F16C8798E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-4", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-4\Chapter-2-LinearList-Practice-4.vcxproj", "{1CED4DB1-F14A-4180-AE43-6C2F16C8798E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-5", "Chapter-2-LinearList-Practice-5\Chapter-2-LinearList-Practice-5.vcxproj", "{D85A08AC-DD7A-473A-9360-0F1751C0A576}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-5", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-5\Chapter-2-LinearList-Practice-5.vcxproj", "{D85A08AC-DD7A-473A-9360-0F1751C0A576}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-6", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-6\Chapter-2-LinearList-Practice-6.vcxproj", "{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-7", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-7\Chapter-2-LinearList-Practice-7.vcxproj", "{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-8", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-8\Chapter-2-LinearList-Practice-8.vcxproj", "{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-9", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-9\Chapter-2-LinearList-Practice-9.vcxproj", "{89737996-60A0-4FA4-8E78-DB800AF3911A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practice-10", "Chapter-2-LinearList\Practice\Chapter-2-LinearList-Practice-10\Chapter-2-LinearList-Practice-10.vcxproj", "{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Homework-3", "Chapter-2-LinearList\Homework\Chapter-2-LinearList-Homework-3\Chapter-2-LinearList-Homework-3.vcxproj", "{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +123,66 @@ Global
 		{D85A08AC-DD7A-473A-9360-0F1751C0A576}.Release|x64.Build.0 = Release|x64
 		{D85A08AC-DD7A-473A-9360-0F1751C0A576}.Release|x86.ActiveCfg = Release|Win32
 		{D85A08AC-DD7A-473A-9360-0F1751C0A576}.Release|x86.Build.0 = Release|Win32
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Debug|x64.ActiveCfg = Debug|x64
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Debug|x64.Build.0 = Debug|x64
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Debug|x86.ActiveCfg = Debug|Win32
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Debug|x86.Build.0 = Debug|Win32
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Release|Any CPU.ActiveCfg = Release|Win32
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Release|x64.ActiveCfg = Release|x64
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Release|x64.Build.0 = Release|x64
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Release|x86.ActiveCfg = Release|Win32
+		{B199FD5D-FEE5-45B9-8F78-95F4F8353DCA}.Release|x86.Build.0 = Release|Win32
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Debug|x64.ActiveCfg = Debug|x64
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Debug|x64.Build.0 = Debug|x64
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Debug|x86.ActiveCfg = Debug|Win32
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Debug|x86.Build.0 = Debug|Win32
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Release|Any CPU.ActiveCfg = Release|Win32
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Release|x64.ActiveCfg = Release|x64
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Release|x64.Build.0 = Release|x64
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Release|x86.ActiveCfg = Release|Win32
+		{5CACB104-11A3-43EA-ABE6-9DB9170E6BC2}.Release|x86.Build.0 = Release|Win32
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Debug|x64.ActiveCfg = Debug|x64
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Debug|x64.Build.0 = Debug|x64
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Debug|x86.ActiveCfg = Debug|Win32
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Debug|x86.Build.0 = Debug|Win32
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Release|Any CPU.ActiveCfg = Release|Win32
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Release|x64.ActiveCfg = Release|x64
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Release|x64.Build.0 = Release|x64
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Release|x86.ActiveCfg = Release|Win32
+		{1100CF5A-8C8C-4EB3-88DC-BCB0C341AC54}.Release|x86.Build.0 = Release|Win32
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Debug|x64.ActiveCfg = Debug|x64
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Debug|x64.Build.0 = Debug|x64
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Debug|x86.ActiveCfg = Debug|Win32
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Debug|x86.Build.0 = Debug|Win32
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Release|Any CPU.ActiveCfg = Release|Win32
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Release|x64.ActiveCfg = Release|x64
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Release|x64.Build.0 = Release|x64
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Release|x86.ActiveCfg = Release|Win32
+		{89737996-60A0-4FA4-8E78-DB800AF3911A}.Release|x86.Build.0 = Release|Win32
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Debug|x64.ActiveCfg = Debug|x64
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Debug|x64.Build.0 = Debug|x64
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Debug|x86.ActiveCfg = Debug|Win32
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Debug|x86.Build.0 = Debug|Win32
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Release|Any CPU.ActiveCfg = Release|Win32
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Release|x64.ActiveCfg = Release|x64
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Release|x64.Build.0 = Release|x64
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Release|x86.ActiveCfg = Release|Win32
+		{FAA24713-44E6-4EF0-BA27-EFB2D68BEC11}.Release|x86.Build.0 = Release|Win32
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Debug|x64.ActiveCfg = Debug|x64
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Debug|x64.Build.0 = Debug|x64
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Debug|x86.ActiveCfg = Debug|Win32
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Debug|x86.Build.0 = Debug|Win32
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Release|Any CPU.ActiveCfg = Release|Win32
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Release|x64.ActiveCfg = Release|x64
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Release|x64.Build.0 = Release|x64
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Release|x86.ActiveCfg = Release|Win32
+		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
