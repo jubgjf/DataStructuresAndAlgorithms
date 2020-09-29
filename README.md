@@ -13,7 +13,7 @@
 
 #### [作业二](./Chapter-2-LinearList/Homework/Chapter-2-LinearList-Homework-2) [已舍弃]
 
-- [ ] 家电管理系统
+- ~~[ ] 家电管理系统~~
 
 #### [作业二](./Chapter-2-LinearList/Homework/Chapter-2-LinearList-Homework-2-CSharp)
 
@@ -21,7 +21,7 @@
 
 #### [作业三](./Chapter-2-LinearList/Homework/Chapter-2-LinearList-Homework-3)
 
-- [ ] 迷宫问题
+- [x] 迷宫问题
 
 ### 练习
 
