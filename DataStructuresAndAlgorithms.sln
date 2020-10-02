@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Practi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Homework-3", "Chapter-2-LinearList\Homework\Chapter-2-LinearList-Homework-3\Chapter-2-LinearList-Homework-3.vcxproj", "{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-2-LinearList-Experiment-1", "Chapter-2-LinearList\Experiment\Chapter-2-LinearList-Experiment-1\Chapter-2-LinearList-Experiment-1.vcxproj", "{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +185,16 @@ Global
 		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Release|x64.Build.0 = Release|x64
 		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Release|x86.ActiveCfg = Release|Win32
 		{1E24B69B-7BE9-4D7B-9E3E-E12A93666EE4}.Release|x86.Build.0 = Release|Win32
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Debug|x64.ActiveCfg = Debug|x64
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Debug|x64.Build.0 = Debug|x64
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Debug|x86.ActiveCfg = Debug|Win32
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Debug|x86.Build.0 = Debug|Win32
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Release|Any CPU.ActiveCfg = Release|Win32
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Release|x64.ActiveCfg = Release|x64
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Release|x64.Build.0 = Release|x64
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Release|x86.ActiveCfg = Release|Win32
+		{75BD9BA0-5DDC-4A08-94F1-DFB115A9EC94}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
