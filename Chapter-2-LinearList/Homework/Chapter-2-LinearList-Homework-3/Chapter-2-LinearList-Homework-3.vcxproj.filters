@@ -18,15 +18,18 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="BasicOperations.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Maze.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BasicOperations.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Maze.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Homework3.h">
+    <ClInclude Include="header.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

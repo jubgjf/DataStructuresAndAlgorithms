@@ -139,12 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BasicOperations.cpp" />
+    <ClCompile Include="Homework3.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Maze.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BasicOperations.h" />
-    <ClInclude Include="Homework3.h" />
-    <ClInclude Include="Maze.h" />
+    <ClInclude Include="header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

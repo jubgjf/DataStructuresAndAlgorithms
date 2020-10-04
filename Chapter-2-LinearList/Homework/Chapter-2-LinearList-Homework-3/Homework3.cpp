@@ -1,39 +1,8 @@
-#pragma once
-
-#include <iostream>
-#include "BasicOperations.h"
-#include "Maze.h"
+ï»¿#include <iostream>
+#include "header.h"
 
 using namespace std;
 
-/// <summary>
-/// ×ßÃÔ¹¬
-/// </summary>
-/// <param name="stack">Õ»</param>
-/// <param name="startPosition">ÆðÊ¼Î»ÖÃ</param>
-/// <param name="endPosition">½áÊøÎ»ÖÃ</param>
-void ExploreMaze(node* stack, Position startPosition, Position endPosition)
-{
-    Position currentPosition = startPosition;
-    maze[currentPosition.y][currentPosition.x].hasPassed = 1;
-
-    while (currentPosition != endPosition)
-    {
-        Position possiblePosition = GetAdjoin(currentPosition);
-        if (possiblePosition == Position{-1, -1})
-        {
-            Pop(stack);
-            possiblePosition = Pop(stack);
-        }
-        currentPosition = possiblePosition;
-        Push(stack, currentPosition);
-        maze[currentPosition.y][currentPosition.x].hasPassed = 1;
-    }
-}
-
-/// <summary>
-/// ×÷ÒµÈýµÄ²âÊÔ
-/// </summary>
 void TestHomework3()
 {
     int width, height;
@@ -58,7 +27,7 @@ void TestHomework3()
 
 
     /*
-     * ¿Î¼þ²âÊÔÓÃÀý£º
+     * è¯¾ä»¶æµ‹è¯•ç”¨ä¾‹ï¼š
 
     15
     11

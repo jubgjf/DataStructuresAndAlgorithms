@@ -1,20 +1,7 @@
-#pragma once
+ï»¿#include <cstdlib>
+#include <iostream>
+#include "header.h"
 
-#include "Maze.h"
-
-/// <summary>
-/// Õ»µÄ½Úµã
-/// </summary>
-struct node
-{
-    struct Position position;
-    struct node* next;
-};
-
-/// <summary>
-/// Éú³É¿ÕÕ»
-/// </summary>
-/// <returns>·µ»ØÕ»</returns>
 node* InitStack()
 {
     node* top = (node*)malloc(sizeof(node));
@@ -23,11 +10,6 @@ node* InitStack()
     return top;
 }
 
-/// <summary>
-/// ½«Êý¾ÝÑ¹Õ»
-/// </summary>
-/// <param name="stack">Õ»</param>
-/// <param name="position">×ø±ê</param>
 void Push(node* stack, Position position)
 {
     node* pushNode = (node*)malloc(sizeof(node));
@@ -36,11 +18,6 @@ void Push(node* stack, Position position)
     stack->next = pushNode;
 }
 
-/// <summary>
-/// µ¯Õ»
-/// </summary>
-/// <param name="stack">Õ»</param>
-/// <returns>·µ»Øµ¯³öµÄÊý¾Ý¡£ÈôÎÞÊý¾Ý£¬Ôò·µ»Ø-1</returns>
 Position Pop(node* stack)
 {
     node* popNode = stack->next;
@@ -57,11 +34,6 @@ Position Pop(node* stack)
     return popData;
 }
 
-/// <summary>
-/// ²éÑ¯Õ»¶¥Êý¾Ý
-/// </summary>
-/// <param name="stack">Õ»</param>
-/// <returns>·µ»ØÕ»¶¥Êý¾Ý¡£ÈôÎÞÊý¾Ý£¬Ôò·µ»Ø-1</returns>
 Position Top(node* stack)
 {
     if (stack->next == nullptr)
@@ -71,21 +43,13 @@ Position Top(node* stack)
     return stack->next->position;
 }
 
-/// <summary>
-/// Çå¿ÕÕ»
-/// </summary>
-/// <param name="stack">Õ»</param>
 void Clear(node* stack)
 {
-    // TODO ½ÚµãÎ´ÊÍ·Å¿Õ¼ä
+    // TODO èŠ‚ç‚¹æœªé‡Šæ”¾ç©ºé—´
 
     stack->next = nullptr;
 }
 
-/// <summary>
-/// ´òÓ¡Õ»ÖÐËùÓÐÊý¾Ý
-/// </summary>
-/// <param name="stack">Õ»</param>
 void Travel(node* stack)
 {
     node* pointer = stack->next;
