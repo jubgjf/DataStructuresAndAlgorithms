@@ -59,3 +59,17 @@ void Travel(node* stack)
         pointer = pointer->next;
     }
 }
+
+int GetSize(node* stack)
+{
+    node* pointer = stack->next;
+    int count = 0;
+
+    while (pointer != nullptr)
+    {
+        count++;
+        pointer = pointer->next;
+    }
+
+    return count;
+}

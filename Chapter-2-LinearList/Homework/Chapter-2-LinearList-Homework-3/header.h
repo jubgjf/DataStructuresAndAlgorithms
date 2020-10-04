@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 
-/* BasicOperations.cpp */
+/* Stack.cpp */
 
 /// <summary>
 /// 坐标
@@ -59,6 +59,13 @@ void Clear(node* stack);
 /// </summary>
 /// <param name="stack">栈</param>
 void Travel(node* stack);
+
+/// <summary>
+/// 获取栈大小
+/// </summary>
+/// <param name="stack">栈</param>
+/// <returns>返回栈大小</returns>
+int GetSize(node* stack);
 
 
 /* Maze.cpp */
@@ -119,6 +126,22 @@ bool operator!=(const Position& position1, const Position& position2);
 /// <param name="startPosition">起始位置</param>
 /// <param name="endPosition">结束位置</param>
 void ExploreMaze(node* stack, Position startPosition, Position endPosition);
+
+/// <summary>
+/// 判断两个位置是否相邻
+/// </summary>
+/// <param name="position1">位置1</param>
+/// <param name="position2">位置2</param>
+/// <returns>若相邻咋返回true，否则返回false</returns>
+bool IsAdjoin(Position position1, Position position2);
+
+/// <summary>
+/// 优化寻路路径
+/// </summary>
+/// <param name="stack">路径栈</param>
+/// <param name="startPosition">起始位置</param>
+/// <param name="endPosition">结束位置</param>
+void ImprovePath(node* stack, Position startPosition, Position endPosition);
 
 
 /* Homework3.cpp */

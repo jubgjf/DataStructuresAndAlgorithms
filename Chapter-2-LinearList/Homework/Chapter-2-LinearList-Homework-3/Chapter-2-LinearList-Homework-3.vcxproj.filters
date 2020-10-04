@@ -18,13 +18,13 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BasicOperations.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Homework3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Maze.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

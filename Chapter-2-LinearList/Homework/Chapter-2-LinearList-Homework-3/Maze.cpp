@@ -1,5 +1,9 @@
-﻿#include <iostream>
+﻿#include <cmath>
+#include <cstdlib>
+#include <iostream>
 #include "header.h"
+
+using namespace std;
 
 /// <summary>
 /// 迷宫
@@ -12,7 +16,7 @@ void InputMaze(int width, int height)
     {
         for (int j = 1; j < width + 1; ++j)
         {
-            std::cin >> maze[i][j].passable;
+            cin >> maze[i][j].passable;
         }
     }
 }
@@ -49,6 +53,7 @@ void ExploreMaze(node* stack, Position startPosition, Position endPosition)
 {
     Position currentPosition = startPosition;
     maze[currentPosition.y][currentPosition.x].hasPassed = 1;
+    Push(stack, startPosition);
 
     while (currentPosition != endPosition)
     {
@@ -61,5 +66,45 @@ void ExploreMaze(node* stack, Position startPosition, Position endPosition)
         currentPosition = possiblePosition;
         Push(stack, currentPosition);
         maze[currentPosition.y][currentPosition.x].hasPassed = 1;
+    }
+}
+
+bool IsAdjoin(Position position1, Position position2)
+{
+    return abs(position1.x - position2.x) <= 1 && abs(position1.y - position2.y) <= 1;
+}
+
+void ImprovePath(node* stack, Position startPosition, Position endPosition)
+{
+    int stackSize = GetSize(stack);
+    Position* path = (Position*)malloc(sizeof(Position) * stackSize);
+
+    for (int i = 0; i < stackSize; ++i)
+    {
+        path[i] = Pop(stack);
+    }
+
+    for (int i = stackSize - 1; i >= 0; i--)
+    {
+        for (int j = 0; j < i - 1; j++)
+        {
+            if (path[j] == Position{-1, -1}) { continue; }
+
+            if (IsAdjoin(path[i], path[j]))
+            {
+                for (int k = j + 1; k < i; k++)
+                {
+                    path[k] = Position{-1, -1};
+                }
+            }
+        }
+    }
+
+    Clear(stack);
+
+    for (int i = 0; i < stackSize; ++i)
+    {
+        if (path[i] == Position{-1, -1}) { continue; }
+        Push(stack, path[i]);
     }
 }

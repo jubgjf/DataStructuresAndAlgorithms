@@ -9,7 +9,6 @@ void TestHomework3()
     Position startPosition, endPosition;
     node* stack = InitStack();
 
-
     cout << "input maze width:\t";
     cin >> width;
     cout << "input maze height:\t";
@@ -22,9 +21,9 @@ void TestHomework3()
     std::cin >> endPosition.x >> endPosition.y;
 
     ExploreMaze(stack, startPosition, endPosition);
+    ImprovePath(stack, startPosition, endPosition);
 
     Travel(stack);
-
 
     /*
      * 课件测试用例：
