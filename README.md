@@ -10,6 +10,7 @@
 
 :heavy_check_mark: 求链表倒数第k项  
 :heavy_check_mark: 求链表中点
+:heavy_check_mark: 链表逆置问题
 
 #### [作业二](./Chapter-2-LinearList/Homework/Chapter-2-LinearList-Homework-2) [已舍弃]
 
@@ -66,3 +67,8 @@
 #### [练习九](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-9)
 
 :grey_exclamation: 数组实现队列
+
+#### [练习十](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-10)
+
+:grey_exclamation: 字符串基本操作
+:heavy_check_mark: 字符串匹配算法
