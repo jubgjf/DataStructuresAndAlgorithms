@@ -62,7 +62,7 @@
 
 #### [练习八](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-8)
 
-:grey_exclamation: 队列基本操作
+:heavy_check_mark: 队列基本操作
 
 #### [练习九](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-9)
 
