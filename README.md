@@ -46,7 +46,7 @@
 
 #### [练习四](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-4)
 
-:grey_exclamation: 环形链表基本操作
+:heavy_check_mark: 环形链表基本操作
 
 #### [练习五](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-5)
 
