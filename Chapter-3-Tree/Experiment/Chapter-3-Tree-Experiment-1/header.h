@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 /**
  * \brief 树中节点储存的数据类型
  */
@@ -8,17 +10,17 @@ typedef char elementType;
 /// <summary>
 /// 树的节点
 /// </summary>
-struct node
+struct Node
 {
     elementType data;
-    struct node* leftChild;
-    struct node* rightChild;
+    struct Node* leftChild;
+    struct Node* rightChild;
 };
 
 /**
  * \brief 树类型
  */
-typedef node* Tree;
+typedef Node* Tree;
 
 /// <summary>
 /// 用两个已有的树组成一个新树
@@ -78,11 +80,20 @@ void PostOrderTravel_Recurse(Tree tree);
 void LayerTravel(Tree tree);
 
 /// <summary>
-/// 判断树是否为二叉树
+/// 判断二叉树是否为完全二叉树
+/// </summary>
+/// <param name="tree">二叉树</param>
+/// <returns>返回是否为完全二叉树的结果</returns>
+bool IsCompleteBinaryTree(Tree tree);
+
+/// <summary>
+/// 获取根节点到指定节点的路径
 /// </summary>
 /// <param name="tree">树</param>
-/// <returns>返回是否为二叉树的结果</returns>
-bool IsBinaryTree(Tree tree);
+/// <param name="node">节点</param>
+/// <param name="tempPath">递归时的临时路径</param>
+/// <param name="finalPath">最终路径</param>
+void GetPathFromRoot(Tree tree, Node* node, std::vector<Node*>& tempPath, std::vector<Node*>& finalPath);
 
 /// <summary>
 /// 获取两个节点的公共祖先
@@ -91,4 +102,4 @@ bool IsBinaryTree(Tree tree);
 /// <param name="node1">第一个节点</param>
 /// <param name="node2">第二个节点</param>
 /// <returns>返回两个节点的第一个公共祖先</returns>
-node* GetPublicAncestor(Tree tree, node* node1, node* node2);
+Node** GetPublicAncestors(Tree tree, Node* node1, Node* node2);
