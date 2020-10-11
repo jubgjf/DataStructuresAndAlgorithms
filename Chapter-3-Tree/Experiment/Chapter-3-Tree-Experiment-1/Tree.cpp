@@ -21,16 +21,14 @@ Tree InputTree()
 
     elementType c;
     cin >> c;
-    switch (c)
-    {
-    case '#':
-        return nullptr;
-    default:
-        tree->data = c;
-        tree->leftChild = InputTree();
-        tree->rightChild = InputTree();
-        return tree;
-    }
+
+    if (c == '#') { return nullptr; }
+
+    tree->data = c;
+    tree->leftChild = InputTree();
+    tree->rightChild = InputTree();
+
+    return tree;
 }
 
 void PreOrderTravel(Tree tree)
@@ -103,6 +101,33 @@ void InOrderTravel_Recurse(Tree tree)
 
 void PostOrderTravel(Tree tree)
 {
+    // 前序遍历为：根->左->右，后序遍历为：左->右->根
+    // 只需类似前序遍历，记录“根->右->左”，再进行逆序，便得到左->右->根
+
+    stack<Tree> nodeStack, reverseStack;
+    Node* node = tree;
+
+    while (node != nullptr || !nodeStack.empty())
+    {
+        while (node != nullptr)
+        {
+            reverseStack.push(node);
+            nodeStack.push(node);
+            node = node->rightChild;
+        }
+        if (!nodeStack.empty())
+        {
+            node = nodeStack.top();
+            nodeStack.pop();
+            node = node->leftChild;
+        }
+    }
+
+    while (!reverseStack.empty())
+    {
+        cout << reverseStack.top()->data;
+        reverseStack.pop();
+    }
 }
 
 void PostOrderTravel_Recurse(Tree tree)
@@ -189,31 +214,58 @@ void GetPathFromRoot(Tree tree, Node* node, vector<Node*>& tempPath, vector<Node
     tempPath.pop_back();
 }
 
-Node** GetPublicAncestors(Tree tree, Node* node1, Node* node2)
+vector<Node*> GetPublicAncestors(Tree tree, Node* node1, Node* node2)
 {
     vector<Node*> node1PathToRoot, node2PathToRoot;
     vector<Node*> tempPath1, tempPath2;
-    vector<Node*> publicAncestorsVector;
+    vector<Node*> publicAncestors;
 
     GetPathFromRoot(tree, node1, tempPath1, node1PathToRoot);
     GetPathFromRoot(tree, node2, tempPath2, node2PathToRoot);
 
-    for (int i = 0; i < node1PathToRoot.size(); ++i)
+    for (unsigned i = 0; i < node1PathToRoot.size(); ++i)
     {
-        for (int j = 0; j < node2PathToRoot.size(); ++j)
+        for (unsigned j = 0; j < node2PathToRoot.size(); ++j)
         {
             if (node1PathToRoot[i] == node2PathToRoot[j])
             {
-                publicAncestorsVector.push_back(node1PathToRoot[i]);
+                publicAncestors.push_back(node1PathToRoot[i]);
             }
         }
     }
 
-    Node** publicAncestors = static_cast<Node**>(malloc(publicAncestorsVector.size()));
-    for (int i = 0; i < publicAncestorsVector.size(); ++i)
+    return publicAncestors;
+}
+
+vector<Node*> GetPublicAncestors(Tree tree, elementType node1Data, elementType node2Data)
+{
+    Node* node1 = FindNodeByData(tree, node1Data);
+    Node* node2 = FindNodeByData(tree, node2Data);
+
+    return GetPublicAncestors(tree, node1, node2);
+}
+
+Node* FindNodeByData(Tree tree, elementType data)
+{
+    stack<Tree> nodeStack;
+    Node* node = tree;
+
+    // 先序遍历
+    while (node != nullptr || !nodeStack.empty())
     {
-        publicAncestors[i] = publicAncestorsVector[i];
+        while (node != nullptr)
+        {
+            if (node->data == data) { return node; }
+            nodeStack.push(node);
+            node = node->leftChild;
+        }
+        if (!nodeStack.empty())
+        {
+            node = nodeStack.top();
+            nodeStack.pop();
+            node = node->rightChild;
+        }
     }
 
-    return publicAncestors;
+    return nullptr;
 }

@@ -1,6 +1,10 @@
 #pragma once
 
+#include <string>
 #include <vector>
+
+
+/* Tree.cpp */
 
 /**
  * \brief 树中节点储存的数据类型
@@ -101,5 +105,30 @@ void GetPathFromRoot(Tree tree, Node* node, std::vector<Node*>& tempPath, std::v
 /// <param name="tree">树</param>
 /// <param name="node1">第一个节点</param>
 /// <param name="node2">第二个节点</param>
-/// <returns>返回两个节点的第一个公共祖先</returns>
-Node** GetPublicAncestors(Tree tree, Node* node1, Node* node2);
+/// <returns>返回两个节点的所有公共祖先</returns>
+std::vector<Node*> GetPublicAncestors(Tree tree, Node* node1, Node* node2);
+
+/// <summary>
+/// 获取两个节点的公共祖先
+/// </summary>
+/// <param name="tree">树</param>
+/// <param name="node1Data">第一个节点储存的数据</param>
+/// <param name="node2Data">第二个节点储存的数据</param>
+/// <returns>返回两个节点的所有公共祖先</returns>
+std::vector<Node*> GetPublicAncestors(Tree tree, elementType node1Data, elementType node2Data);
+
+/// <summary>
+/// 根据数据寻找节点
+/// </summary>
+/// <param name="tree">树</param>
+/// <param name="data">已知数据</param>
+/// <returns>返回存储已知数据的节点</returns>
+Node* FindNodeByData(Tree tree, elementType data);
+
+
+/* Experiment.cpp */
+
+/// <summary>
+/// 测试实验一
+/// </summary>
+void TestExperiment1();
