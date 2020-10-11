@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿#include <cmath>
+#include <iostream>
 #include <queue>
 #include <stack>
 #include "header.h"
@@ -29,6 +30,48 @@ Tree InputTree()
     tree->rightChild = InputTree();
 
     return tree;
+}
+
+void PrintTree(Tree tree, int maxLayer)
+{
+    vector<vector<elementType>> treeByLayer(maxLayer);
+    queue<Tree> travelQueue, nodeQueue;
+    Node* blankNode = new Node;
+    blankNode->data = ' ';
+    blankNode->leftChild = nullptr;
+    blankNode->rightChild = nullptr;
+
+    // 层序遍历，所有节点保存到nodeQueue
+    travelQueue.push(tree);
+    while (!travelQueue.empty())
+    {
+        Node* node = travelQueue.front();
+        nodeQueue.push(node);
+        travelQueue.pop();
+        if (node->leftChild != nullptr) { travelQueue.push(node->leftChild); }
+        else if (node->data != ' ') { travelQueue.push(blankNode); }
+        if (node->rightChild != nullptr) { travelQueue.push(node->rightChild); }
+        else if (node->data != ' ') { travelQueue.push(blankNode); }
+    }
+
+    // 向nodeQueue补充空格
+    int nodeQueueSize = nodeQueue.size();
+    for (int i = nodeQueueSize+1; i < pow(2, ceil(log2(nodeQueueSize + 1))); ++i)
+    {
+        nodeQueue.push(blankNode);
+    }
+
+    // 将所有节点按层分离
+    for (int i = 0; !nodeQueue.empty(); ++i)
+    {
+        for (int j = 0; j < pow(2, i); ++j)
+        {
+            treeByLayer[i].push_back(nodeQueue.front()->data);
+            nodeQueue.pop();
+        }
+    }
+
+    // TODO
 }
 
 void PreOrderTravel(Tree tree)

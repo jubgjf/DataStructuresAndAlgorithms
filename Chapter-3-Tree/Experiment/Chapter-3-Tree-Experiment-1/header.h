@@ -42,6 +42,12 @@ Tree Init(elementType rootData, Tree leftTree, Tree rightTree);
 Tree InputTree();
 
 /// <summary>
+/// 图形化打印树
+/// </summary>
+/// <param name="tree">树</param>
+void PrintTree(Tree tree, int maxLayer);
+
+/// <summary>
 /// 先序遍历树，非递归
 /// </summary>
 /// <param name="tree">树</param>
