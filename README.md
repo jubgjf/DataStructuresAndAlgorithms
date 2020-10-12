@@ -41,3 +41,10 @@
 |内容|完成情况|链接|
 |:-:|:-:|:-:|
 |树的基本操作|:heavy_check_mark:|[实验一](./Chapter-3-Tree/Experiment/Chapter-3-Tree-Experiment-1)|
+
+### 练习
+
+|内容|完成情况|链接|
+|:-:|:-:|:-:|
+|线索二叉树基本操作|:grey_exclamation:|[练习一](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-1)|
+|堆的基本操作|:grey_exclamation:|[练习二](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-2)|
