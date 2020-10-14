@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include <vector>
 
 
@@ -47,19 +46,6 @@ Tree Init(elementType rootData, Tree leftTree, Tree rightTree);
 Tree InputTree();
 
 /// <summary>
-/// 将层序遍历的节点数组转换为二叉树
-/// </summary>
-/// <param name="nodeList">节点数组</param>
-/// <returns>返回二叉树</returns>
-Tree NodeListToTree(Node** nodeList, int nodeListLength);
-
-/// <summary>
-/// 图形化打印树
-/// </summary>
-/// <param name="tree">树</param>
-void PrintTree(Tree tree, int maxLayer);
-
-/// <summary>
 /// 先序遍历树，非递归
 /// </summary>
 /// <param name="tree">树</param>
@@ -102,14 +88,6 @@ void PostOrderTravel_Recurse(Tree tree);
 void LayerTravel(Tree tree);
 
 /// <summary>
-/// 层序遍历，将节点保存到数组，包括孩子为空的情况
-/// </summary>
-/// <param name="tree">二叉树</param>
-/// <param name="nodeList">保存节点的数组</param>
-/// <param name="nodeListIndex">保存节点的数组长度</param>
-void LayerTravel(Tree tree, Node** nodeList, int& nodeListIndex);
-
-/// <summary>
 /// 判断二叉树是否为完全二叉树
 /// </summary>
 /// <param name="tree">二叉树</param>
@@ -150,13 +128,6 @@ std::vector<Node*> GetPublicAncestors(Tree tree, elementType node1Data, elementT
 /// <param name="data">已知数据</param>
 /// <returns>返回存储已知数据的节点</returns>
 Node* FindNodeByData(Tree tree, elementType data);
-
-/// <summary>
-/// 复制一棵二叉树
-/// </summary>
-/// <param name="sourceTree">源二叉树</param>
-/// <returns>返回复制的二叉树根指针</returns>
-Tree Copy(Tree sourceTree);
 
 
 /* Experiment.cpp */

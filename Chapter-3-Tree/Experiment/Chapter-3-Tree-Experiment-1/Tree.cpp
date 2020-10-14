@@ -32,78 +32,6 @@ Tree InputTree()
     return tree;
 }
 
-Tree NodeListToTree(Node** nodeList, int nodeListLength)
-{
-    queue<Node*> nodeQueue;
-    int nodeIndex = 1;
-    Node* rootNode = nodeList[nodeIndex];
-    nodeQueue.push(rootNode);
-
-    while (!nodeQueue.empty() && nodeIndex < nodeListLength)
-    {
-        Node* node = nodeQueue.front();
-        nodeQueue.pop();
-
-        Node* leftChild = nodeList[nodeIndex * 2];
-        Node* rightChild = nodeList[nodeIndex * 2 + 1];
-
-        if (node != nullptr)
-        {
-            node->leftChild = leftChild;
-            node->rightChild = rightChild;
-        }
-
-        nodeQueue.push(leftChild);
-        nodeQueue.push(rightChild);
-
-        nodeIndex++;
-    }
-
-    return rootNode;
-}
-
-void PrintTree(Tree tree, int maxLayer)
-{
-    vector<vector<elementType>> treeByLayer(maxLayer);
-    queue<Tree> travelQueue, nodeQueue;
-    Node* blankNode = new Node;
-    blankNode->data = ' ';
-    blankNode->leftChild = nullptr;
-    blankNode->rightChild = nullptr;
-
-    // 层序遍历，所有节点保存到nodeQueue
-    travelQueue.push(tree);
-    while (!travelQueue.empty())
-    {
-        Node* node = travelQueue.front();
-        nodeQueue.push(node);
-        travelQueue.pop();
-        if (node->leftChild != nullptr) { travelQueue.push(node->leftChild); }
-        else if (node->data != ' ') { travelQueue.push(blankNode); }
-        if (node->rightChild != nullptr) { travelQueue.push(node->rightChild); }
-        else if (node->data != ' ') { travelQueue.push(blankNode); }
-    }
-
-    // 向nodeQueue补充空格
-    int nodeQueueSize = nodeQueue.size();
-    for (int i = nodeQueueSize + 1; i < pow(2, ceil(log2(nodeQueueSize + 1))); ++i)
-    {
-        nodeQueue.push(blankNode);
-    }
-
-    // 将所有节点按层分离
-    for (int i = 0; !nodeQueue.empty(); ++i)
-    {
-        for (int j = 0; j < pow(2, i); ++j)
-        {
-            treeByLayer[i].push_back(nodeQueue.front()->data);
-            nodeQueue.pop();
-        }
-    }
-
-    // TODO
-}
-
 void PreOrderTravel(Tree tree)
 {
     // 对于任一结点P：
@@ -228,37 +156,6 @@ void LayerTravel(Tree tree)
     }
 }
 
-void LayerTravel(Tree tree, Node** nodeList, int& nodeListIndex)
-{
-    // 层序遍历，将节点保存到数组，包括孩子为空
-
-    queue<Tree> nodeQueue;
-    nodeQueue.push(tree);
-
-    while (!nodeQueue.empty())
-    {
-        Node* node = new Node;
-        if (nodeQueue.front() == nullptr)
-        {
-            node = nullptr;
-        }
-        else
-        {
-            node->data = nodeQueue.front()->data;
-            node->leftChild = nullptr;
-            node->rightChild = nullptr;
-        }
-        nodeList[nodeListIndex] = node;
-        nodeListIndex++;
-        if (node != nullptr)
-        {
-            nodeQueue.push(nodeQueue.front()->leftChild);
-            nodeQueue.push(nodeQueue.front()->rightChild);
-        }
-        nodeQueue.pop();
-    }
-}
-
 bool IsCompleteBinaryTree(Tree tree)
 {
     // 层序遍历，如果队列不为空，一直循环
@@ -372,15 +269,4 @@ Node* FindNodeByData(Tree tree, elementType data)
     }
 
     return nullptr;
-}
-
-Tree Copy(Tree sourceTree)
-{
-    Node* nodeList[MAX_NODE_COUNT];
-    memset(nodeList, 0, sizeof(nodeList));
-    int nodeListIndex = 1;
-
-    LayerTravel(sourceTree, nodeList, nodeListIndex);
-
-    return NodeListToTree(nodeList, nodeListIndex);
 }
