@@ -54,10 +54,22 @@ void destroy(tree b_tree);
 void mirror(tree b_tree);
 
 /**
+ * \brief 递归交换二叉树的所有节点子树（镜像对称）
+ * \param b_tree 二叉树
+ */
+void mirror_r(tree b_tree);
+
+/**
  * \brief 接受用户输入的二叉树
  * \return 返回输入的二叉树
  */
 tree input();
+
+/**
+ * \brief 递归接受用户输入的二叉树
+ * \return 返回输入的二叉树
+ */
+tree input_r();
 
 /**
  * \brief 按照线索获取指定节点的后继节点

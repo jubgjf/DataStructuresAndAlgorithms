@@ -33,6 +33,7 @@
 |队列基本操作|:heavy_check_mark:|[练习八](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-8)|
 |队列的数组实现|:grey_exclamation:|[练习九](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-9)|
 |字符串基本操作、字符串匹配|:grey_exclamation:|[练习十](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-10)|
+|两个栈实现队列|:grey_exclamation:|[练习十一](./Chapter-2-LinearList/Practice/Chapter-2-LinearList-Practice-11)|
 
 ## 第三章 树与二叉树
 

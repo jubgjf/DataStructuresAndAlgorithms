@@ -2,4 +2,5 @@
 
 int main()
 {
+    tree tree = input();
 }

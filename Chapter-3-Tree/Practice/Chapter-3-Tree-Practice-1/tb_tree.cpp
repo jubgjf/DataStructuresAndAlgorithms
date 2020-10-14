@@ -18,7 +18,16 @@ void mirror(tree b_tree)
 {
 }
 
+void mirror_r(tree b_tree)
+{
+}
+
 tree input()
+{
+    return nullptr;
+}
+
+tree input_r()
 {
     return nullptr;
 }
