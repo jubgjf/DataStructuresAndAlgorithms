@@ -32,6 +32,36 @@ Tree InputTree()
     return tree;
 }
 
+Tree NodeListToTree(Node** nodeList, int nodeListLength)
+{
+    queue<Node*> nodeQueue;
+    int nodeIndex = 1;
+    Node* rootNode = nodeList[nodeIndex];
+    nodeQueue.push(rootNode);
+
+    while (!nodeQueue.empty() && nodeIndex < nodeListLength)
+    {
+        Node* node = nodeQueue.front();
+        nodeQueue.pop();
+
+        Node* leftChild = nodeList[nodeIndex * 2];
+        Node* rightChild = nodeList[nodeIndex * 2 + 1];
+
+        if (node != nullptr)
+        {
+            node->leftChild = leftChild;
+            node->rightChild = rightChild;
+        }
+
+        nodeQueue.push(leftChild);
+        nodeQueue.push(rightChild);
+
+        nodeIndex++;
+    }
+
+    return rootNode;
+}
+
 void PrintTree(Tree tree, int maxLayer)
 {
     vector<vector<elementType>> treeByLayer(maxLayer);
@@ -56,7 +86,7 @@ void PrintTree(Tree tree, int maxLayer)
 
     // 向nodeQueue补充空格
     int nodeQueueSize = nodeQueue.size();
-    for (int i = nodeQueueSize+1; i < pow(2, ceil(log2(nodeQueueSize + 1))); ++i)
+    for (int i = nodeQueueSize + 1; i < pow(2, ceil(log2(nodeQueueSize + 1))); ++i)
     {
         nodeQueue.push(blankNode);
     }
@@ -198,6 +228,37 @@ void LayerTravel(Tree tree)
     }
 }
 
+void LayerTravel(Tree tree, Node** nodeList, int& nodeListIndex)
+{
+    // 层序遍历，将节点保存到数组，包括孩子为空
+
+    queue<Tree> nodeQueue;
+    nodeQueue.push(tree);
+
+    while (!nodeQueue.empty())
+    {
+        Node* node = new Node;
+        if (nodeQueue.front() == nullptr)
+        {
+            node = nullptr;
+        }
+        else
+        {
+            node->data = nodeQueue.front()->data;
+            node->leftChild = nullptr;
+            node->rightChild = nullptr;
+        }
+        nodeList[nodeListIndex] = node;
+        nodeListIndex++;
+        if (node != nullptr)
+        {
+            nodeQueue.push(nodeQueue.front()->leftChild);
+            nodeQueue.push(nodeQueue.front()->rightChild);
+        }
+        nodeQueue.pop();
+    }
+}
+
 bool IsCompleteBinaryTree(Tree tree)
 {
     // 层序遍历，如果队列不为空，一直循环
@@ -311,4 +372,15 @@ Node* FindNodeByData(Tree tree, elementType data)
     }
 
     return nullptr;
+}
+
+Tree Copy(Tree sourceTree)
+{
+    Node* nodeList[MAX_NODE_COUNT];
+    memset(nodeList, 0, sizeof(nodeList));
+    int nodeListIndex = 1;
+
+    LayerTravel(sourceTree, nodeList, nodeListIndex);
+
+    return NodeListToTree(nodeList, nodeListIndex);
 }
