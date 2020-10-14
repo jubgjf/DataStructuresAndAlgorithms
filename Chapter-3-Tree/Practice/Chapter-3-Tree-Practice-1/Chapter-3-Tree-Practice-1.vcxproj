@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="threaded_binary_tree.cpp" />
+    <ClCompile Include="tb_tree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
