@@ -9,10 +9,16 @@ int main()
     string inputStr;
     cin >> inputStr;
 
-    string suffixStr = InfixToSuffix(inputStr);
-    cout << "suffix:\t" << suffixStr << endl;
-
-    cout << "result:\t" << CalculateSuffix(suffixStr) << endl;
+    try
+    {
+        string suffixStr = InfixToSuffix(inputStr);
+        cout << "suffix:\t" << suffixStr << endl;
+        cout << "result:\t" << CalculateSuffix(suffixStr) << endl;
+    }
+    catch (exception e)
+    {
+        cout << "Error";
+    }
 
     return 0;
 }
