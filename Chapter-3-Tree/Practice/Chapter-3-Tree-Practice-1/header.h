@@ -4,6 +4,13 @@
 /* tb_tree.cpp */
 
 /**
+ * \brief 求两个数的最大值
+ * \param x 第一个数
+ * \param y 第二个数
+ */
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
+
+/**
  * \brief 树节点储存的数据类型
  */
 typedef char element_type;
