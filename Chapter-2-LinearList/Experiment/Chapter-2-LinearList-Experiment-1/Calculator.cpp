@@ -26,6 +26,11 @@ string InfixToSuffix(string infixStr)
     node* operatorStack = InitStack();
     string suffixStr;
 
+    if (infixStr[0] == '-') // 表达式开头就是负数
+    {
+        infixStr = "0" + infixStr;
+    }
+
     for (int i = 0; ; ++i)
     {
         if (infixStr[i] == '\0') { break; }
@@ -49,6 +54,11 @@ string InfixToSuffix(string infixStr)
             else if (infixStr[i] == '(')
             {
                 Push(operatorStack, infixStr[i]);
+
+                if (infixStr[i + 1] == '-') // 括号内开头就是负数
+                {
+                    infixStr.insert(i + 1, 1, '0');
+                }
             }
             else
             {
