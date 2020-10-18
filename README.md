@@ -48,4 +48,4 @@
 |内容|完成情况|链接|
 |:-:|:-:|:-:|
 |树和线索二叉树的基本操作|:grey_exclamation:|[练习一](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-1)|
-|堆的基本操作|:grey_exclamation:|[练习二](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-2)|
+|堆的基本操作|:heavy_check_mark:|[练习二](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-2)|
