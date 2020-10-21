@@ -37,6 +37,12 @@
 
 ## 第三章 树与二叉树
 
+### 作业
+
+|内容|完成情况|链接|
+|:-:|:-:|:-:|
+|哈夫曼编码和译码方法|:grey_exclamation:|[作业一](./Chapter-3-Tree/Homework/Chapter-3-Tree-Homework-1)|
+
 ### 实验
 
 |内容|完成情况|链接|
@@ -47,5 +53,7 @@
 
 |内容|完成情况|链接|
 |:-:|:-:|:-:|
-|树和线索二叉树的基本操作|:grey_exclamation:|[练习一](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-1)|
+|二叉树和线索二叉树的基本操作|:grey_exclamation:|[练习一](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-1)|
 |堆的基本操作|:heavy_check_mark:|[练习二](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-2)|
+|一般树的基本操作|:grey_exclamation:|[练习三](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-3)|
+|并查集|:grey_exclamation:|[练习四](./Chapter-3-Tree/Practice/Chapter-3-Tree-Practice-4)|
