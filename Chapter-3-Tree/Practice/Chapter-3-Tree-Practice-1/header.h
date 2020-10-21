@@ -4,13 +4,6 @@
 /* tb_tree.cpp */
 
 /**
- * \brief 求两个数的最大值
- * \param x 第一个数
- * \param y 第二个数
- */
-#define MAX(x, y) ((x) > (y) ? (x) : (y))
-
-/**
  * \brief 树节点储存的数据类型
  */
 typedef char element_type;
@@ -33,6 +26,14 @@ struct node
  * \brief 树类型
  */
 typedef struct node* tree;
+
+/**
+ * \brief 获取两个数的最大值
+ * \param a 第一个数
+ * \param b 第二个数
+ * \return 返回两个数的最大值
+ */
+int max(int a, int b);
 
 /**
  * \brief 计算二叉树节点个数
@@ -89,7 +90,7 @@ node* tb_next(tree tb_tree, node* node);
 /**
  * \brief 初始化线索
  */
-void init();
+void init(tree tb_tree);
 
 /**
  * \brief 线索二叉树先序遍历
