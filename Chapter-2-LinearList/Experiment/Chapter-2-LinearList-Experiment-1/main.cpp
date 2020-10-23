@@ -17,7 +17,7 @@ int main()
     }
     catch (exception e)
     {
-        cout << "Error";
+        cout << "Error:" << e.what();
     }
 
     return 0;

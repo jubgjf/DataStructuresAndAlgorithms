@@ -125,6 +125,10 @@ double ExecCalculate(double num1, double num2, char op)
     case '/':
         return num1 / num2;
     case '%':
+        if (!((int)num1 == num1 && (int)num2 == num2))
+        {
+            cout << "发生小数取模，强制转换为整数" << endl;
+        }
         return (int)num1 % (int)num2;
     default:
         return 0;
