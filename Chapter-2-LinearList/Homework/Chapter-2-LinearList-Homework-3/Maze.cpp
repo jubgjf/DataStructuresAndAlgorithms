@@ -31,12 +31,12 @@ Position GetAdjoin(Position position)
 
             if (maze[i][j].passable == 1 && maze[i][j].hasPassed == 0)
             {
-                return Position{j, i};
+                return Position{ j, i };
             }
         }
     }
 
-    return Position{-1, -1};
+    return Position{ -1, -1 };
 }
 
 bool operator==(const Position& position1, const Position& position2)
@@ -58,10 +58,15 @@ void ExploreMaze(node* stack, Position startPosition, Position endPosition)
     while (currentPosition != endPosition)
     {
         Position possiblePosition = GetAdjoin(currentPosition);
-        if (possiblePosition == Position{-1, -1})
+        if (possiblePosition == Position{ -1, -1 })
         {
             Pop(stack);
             possiblePosition = Pop(stack);
+            if (possiblePosition == Position{ -1,-1 })
+            {
+                cout << "NO PATH" << endl;
+                return;
+            }
         }
         currentPosition = possiblePosition;
         Push(stack, currentPosition);
@@ -88,13 +93,13 @@ void ImprovePath(node* stack, Position startPosition, Position endPosition)
     {
         for (int j = 0; j < i - 1; j++)
         {
-            if (path[j] == Position{-1, -1}) { continue; }
+            if (path[j] == Position{ -1, -1 }) { continue; }
 
             if (IsAdjoin(path[i], path[j]))
             {
                 for (int k = j + 1; k < i; k++)
                 {
-                    path[k] = Position{-1, -1};
+                    path[k] = Position{ -1, -1 };
                 }
             }
         }
@@ -104,7 +109,7 @@ void ImprovePath(node* stack, Position startPosition, Position endPosition)
 
     for (int i = 0; i < stackSize; ++i)
     {
-        if (path[i] == Position{-1, -1}) { continue; }
+        if (path[i] == Position{ -1, -1 }) { continue; }
         Push(stack, path[i]);
     }
 }
