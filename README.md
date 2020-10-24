@@ -41,7 +41,8 @@
 
 |内容|完成情况|链接|
 |:-:|:-:|:-:|
-|哈夫曼编码和译码方法|:grey_exclamation:|[作业一](./Chapter-3-Tree/Homework/Chapter-3-Tree-Homework-1)|
+|哈夫曼编码和译码方法|:x:|[作业一](./Chapter-3-Tree/Homework/Chapter-3-Tree-Homework-1)|
+|哈夫曼编码和译码方法|:grey_exclamation:|[作业一](./Chapter-3-Tree/Homework/Chapter-3-Tree-Homework-1-CSharp)|
 
 ### 实验
 
