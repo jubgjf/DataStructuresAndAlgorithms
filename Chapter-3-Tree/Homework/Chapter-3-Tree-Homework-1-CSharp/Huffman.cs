@@ -47,7 +47,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         /// <summary>
         /// 一个字符的哈夫曼编码
         /// </summary>
-        private struct HuffmanCodeMapElement
+        public struct HuffmanCodeMapElement
         {
             public char Char;
             public BitArray Code;
@@ -56,7 +56,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         /// <summary>
         /// 哈夫曼编码表
         /// </summary>
-        private HuffmanCodeMapElement[] _huffmanCodeMap;
+        public HuffmanCodeMapElement[] HuffmanCodeMap;
 
         /// <summary>
         /// 初始化哈夫曼树叶节点，并生成叶节点小顶堆
@@ -133,7 +133,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         }
 
         /// <summary>
-        /// 生成一个字符的哈夫曼编码
+        /// 生成一个指定字符的哈夫曼编码
         /// </summary>
         /// <param name="index">字符在哈夫曼树中的下标</param>
         /// <returns>返回字符的哈夫曼编码</returns>
@@ -150,6 +150,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
                 {
                     newCharCode[i + 1] = charCode[i];
                 }
+
                 newCharCode[0] = _huffmanTree[parentIndex].LeftChildIndex != index;
                 charCode = newCharCode;
 
@@ -165,12 +166,72 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         /// <param name="charVariety">字符种类数</param>
         private void GenHuffmanCodeMap(int charVariety)
         {
-            _huffmanCodeMap = new HuffmanCodeMapElement[charVariety];
+            HuffmanCodeMap = new HuffmanCodeMapElement[charVariety];
             for (int i = 0; i < charVariety; i++)
             {
-                _huffmanCodeMap[i].Char = _huffmanTree[i].Char;
-                _huffmanCodeMap[i].Code = GenCharCode(i);
+                HuffmanCodeMap[i].Char = _huffmanTree[i].Char;
+                HuffmanCodeMap[i].Code = GenCharCode(i);
             }
+        }
+
+        /// <summary>
+        /// 将字符串转换为哈夫曼编码
+        /// </summary>
+        /// <param name="text">待转换字符串</param>
+        /// <returns>返回字符串对应的哈夫曼编码</returns>
+        public BitArray StringToHuffmanCode(string text)
+        {
+            BitArray huffmanCode = new BitArray(0);
+
+            foreach (char c in text)
+            {
+                foreach (HuffmanCodeMapElement element in HuffmanCodeMap)
+                {
+                    if (element.Char == c)
+                    {
+                        BitArray newHuffmanCode = new BitArray(huffmanCode.Length + element.Code.Length);
+
+                        for (int i = 0; i < huffmanCode.Length; i++)
+                        {
+                            newHuffmanCode[i] = huffmanCode[i];
+                        }
+                        for (int i = huffmanCode.Length; i < huffmanCode.Length+ element.Code.Length; i++)
+                        {
+                            newHuffmanCode[i] = element.Code[i - huffmanCode.Length];
+                        }
+
+                        huffmanCode = newHuffmanCode;
+                        break;
+                    }
+                }
+            }
+
+            return huffmanCode;
+        }
+
+        /// <summary>
+        /// 将一组哈夫曼编码还原回字符串
+        /// </summary>
+        /// <param name="huffmanCode">哈夫曼编码</param>
+        /// <returns>还原的字符串</returns>
+        public string HuffmanCodeToString(BitArray huffmanCode)
+        {
+            string resultString = "";
+            int currentIndex = _huffmanTreeLastIndex;
+
+            foreach (bool bit in huffmanCode)
+            {
+                currentIndex = bit == false
+                    ? _huffmanTree[currentIndex].LeftChildIndex
+                    : _huffmanTree[currentIndex].RightChildIndex;
+                if (_huffmanTree[currentIndex].LeftChildIndex == -1 && _huffmanTree[currentIndex].RightChildIndex == -1)
+                {
+                    resultString += _huffmanTree[currentIndex].Char;
+                    currentIndex = _huffmanTreeLastIndex;
+                }
+            }
+
+            return resultString;
         }
     }
 }
