@@ -106,27 +106,27 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         /// <param name="heap">叶节点小顶堆</param>
         private void GenHuffmanTreeStructure(Heap heap)
         {
-            // 初始两个叶节点建立结构
-            Heap.CharData firstLeaf = heap.Pop();
-            Heap.CharData secondLeaf = heap.Pop();
-            _huffmanTree[_huffmanTreeLastIndex + 1].LeftChildIndex = firstLeaf.Index;
-            _huffmanTree[_huffmanTreeLastIndex + 1].RightChildIndex = secondLeaf.Index;
-            _huffmanTree[_huffmanTreeLastIndex + 1].Weight = firstLeaf.Weight + secondLeaf.Weight;
-            _huffmanTree[firstLeaf.Index].ParentIndex = _huffmanTreeLastIndex + 1;
-            _huffmanTree[secondLeaf.Index].ParentIndex = _huffmanTreeLastIndex + 1;
-            _huffmanTreeLastIndex++;
-
-            // 建立其余结构
-            while (!heap.IsEmpty())
+            while (true)
             {
-                Heap.CharData leaf = heap.Pop();
-                _huffmanTree[_huffmanTreeLastIndex + 1].LeftChildIndex = leaf.Index;
-                _huffmanTree[_huffmanTreeLastIndex + 1].RightChildIndex = _huffmanTreeLastIndex;
-                _huffmanTree[_huffmanTreeLastIndex + 1].Weight =
-                    leaf.Weight + _huffmanTree[_huffmanTreeLastIndex].Weight;
-                _huffmanTree[leaf.Index].ParentIndex = _huffmanTreeLastIndex + 1;
-                _huffmanTree[_huffmanTreeLastIndex].ParentIndex = _huffmanTreeLastIndex + 1;
+                // 取出权值最小的两个元素，组成一颗新的二叉树
+                Heap.CharData firstLeaf = heap.Pop();
+                Heap.CharData secondLeaf = heap.Pop();
+                _huffmanTree[_huffmanTreeLastIndex + 1].LeftChildIndex = firstLeaf.Index;
+                _huffmanTree[_huffmanTreeLastIndex + 1].RightChildIndex = secondLeaf.Index;
+                _huffmanTree[_huffmanTreeLastIndex + 1].Weight = firstLeaf.Weight + secondLeaf.Weight;
+                _huffmanTree[firstLeaf.Index].ParentIndex = _huffmanTreeLastIndex + 1;
+                _huffmanTree[secondLeaf.Index].ParentIndex = _huffmanTreeLastIndex + 1;
                 _huffmanTreeLastIndex++;
+
+                if (heap.IsEmpty()) { break; }
+
+                // 将新二叉树放入堆中，进行全脂排序
+                heap.Insert(new Heap.CharData
+                {
+                    Char = _huffmanTree[_huffmanTreeLastIndex].Char,
+                    Index = _huffmanTreeLastIndex,
+                    Weight = _huffmanTree[_huffmanTreeLastIndex].Weight
+                });
             }
 
             _huffmanTree[_huffmanTreeLastIndex].ParentIndex = -1;
@@ -232,6 +232,22 @@ namespace Chapter_3_Tree_Homework_1_CSharp
             }
 
             return resultString;
+        }
+
+        /// <summary>
+        /// 输出哈夫曼编码表
+        /// </summary>
+        public void ShowHuffmanCodeMap()
+        {
+            foreach (HuffmanCodeMapElement element in HuffmanCodeMap)
+            {
+                Console.Write(element.Char + " --> ");
+                foreach (bool b in element.Code)
+                {
+                    Console.Write(Convert.ToInt32(b));
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
