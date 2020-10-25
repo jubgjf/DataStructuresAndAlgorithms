@@ -195,7 +195,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
                         {
                             newHuffmanCode[i] = huffmanCode[i];
                         }
-                        for (int i = huffmanCode.Length; i < huffmanCode.Length+ element.Code.Length; i++)
+                        for (int i = huffmanCode.Length; i < huffmanCode.Length + element.Code.Length; i++)
                         {
                             newHuffmanCode[i] = element.Code[i - huffmanCode.Length];
                         }

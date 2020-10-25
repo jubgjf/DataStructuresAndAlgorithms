@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 
 namespace Chapter_3_Tree_Homework_1_CSharp
@@ -72,6 +73,49 @@ namespace Chapter_3_Tree_Homework_1_CSharp
             }
 
             return validCount;
+        }
+
+        /// <summary>
+        /// 将哈夫曼编码写入文件
+        /// </summary>
+        /// <param name="fileName">文件路径</param>
+        /// <param name="huffmanCode">哈夫曼编码</param>
+        public static void WriteEncodedTextToFile(string fileName, BitArray huffmanCode)
+        {
+            // 文件的第一个字节保存哈夫曼编码差几位成为8的倍数
+            byte[] fileContent = new byte[1 + huffmanCode.Length / 8 + (huffmanCode.Length % 8 == 0 ? 0 : 1)];
+            fileContent[0] = Convert.ToByte(8 - huffmanCode.Length % 8);
+            huffmanCode.CopyTo(fileContent, 1);
+
+            using BinaryWriter bw = new BinaryWriter(new FileStream(fileName, FileMode.Create));
+            bw.Write(fileContent);
+            bw.Close();
+        }
+
+        /// <summary>
+        /// 从文件读取哈夫曼编码
+        /// </summary>
+        /// <param name="fileName">文件路径</param>
+        /// <returns>返回哈夫曼编码</returns>
+        public static BitArray ReadEncodedTextFromFile(string fileName)
+        {
+            using BinaryReader br = new BinaryReader(new FileStream(fileName, FileMode.Open));
+            int lackBits = Convert.ToInt32(br.ReadByte()); // 哈夫曼编码差几位成为8的倍数
+            int fileSize = Convert.ToInt32(new FileInfo(fileName).Length);
+            byte[] fileContent = new byte[fileSize - 1]; // 排除第一个字节
+            for (int i = 0; i < fileSize - 1; i++)
+            {
+                fileContent[i] = br.ReadByte();
+            }
+
+            BitArray bits = new BitArray(fileContent);
+            BitArray huffmanCode = new BitArray(bits.Length - lackBits); // 去除写入时补充的0
+            for (int i = 0; i < huffmanCode.Length; i++)
+            {
+                huffmanCode[i] = bits[i];
+            }
+
+            return huffmanCode;
         }
     }
 }

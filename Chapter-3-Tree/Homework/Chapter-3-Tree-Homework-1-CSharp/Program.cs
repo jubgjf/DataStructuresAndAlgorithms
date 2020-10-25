@@ -7,32 +7,23 @@ namespace Chapter_3_Tree_Homework_1_CSharp
     {
         static void Main(string[] args)
         {
-            // File.WriteTextToFile("test.txt", "first\r\nsecond");
-            // string text = File.ReadTextFromFile("test.txt");
-            // int[] analyzeResult = File.AnalyzeFrequency(text);
+            // 读取文本文件并分析字符频率
+            string text = File.ReadTextFromFile("test.txt");
+            int[] frequencyResult = File.AnalyzeFrequency(text);
+            
+            // 进行哈夫曼编码
+            Huffman huffman = new Huffman(frequencyResult);
+            BitArray huffmanCode = huffman.StringToHuffmanCode(text);
+            
+            // 将编码写入二进制文件
+            File.WriteEncodedTextToFile("result.txt", huffmanCode);
 
-            int[] charData = new int[128];
-            charData[Convert.ToInt32('A')] = 12;
-            charData[Convert.ToInt32('D')] = 29;
-            charData[Convert.ToInt32('O')] = 8;
-            charData[Convert.ToInt32('Z')] = 77;
-            charData[Convert.ToInt32('K')] = 1;
-
-            Huffman huffman = new Huffman(charData);
-
-            BitArray bitArray = huffman.StringToHuffmanCode("AZKDOZAA");
-
-            string str = huffman.HuffmanCodeToString(new BitArray(new bool[]
-            {
-                true, true, false,
-                false,
-                true, true, true, false,
-                true, false,
-                true, true, true, true,
-                false,
-                true, true, false,
-                true, true, false
-            })); // AZKDOZAA
+            // 读取二进制文件并进行解码
+            BitArray encodedText = File.ReadEncodedTextFromFile("result.txt");
+            string decodedText = huffman.HuffmanCodeToString(encodedText);
+            
+            // 输出解码结果
+            Console.WriteLine(decodedText);
         }
     }
 }
