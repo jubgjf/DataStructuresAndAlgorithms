@@ -24,6 +24,15 @@ namespace Chapter_3_Tree_Homework_1_CSharp
             // heap.Pop();
             // heap.Pop();
             // heap.Pop();
+
+            int[] charData = new int[128];
+            charData[65] = 12;  // A
+            charData[68] = 29;  // D
+            charData[79] = 8;   // O
+            charData[90] = 77;  // Z
+            charData[125] = 1;  // }
+
+            Huffman huffman=new Huffman(charData);
         }
     }
 }

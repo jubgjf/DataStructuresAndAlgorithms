@@ -51,8 +51,27 @@ namespace Chapter_3_Tree_Homework_1_CSharp
             {
                 charData[Convert.ToInt32(c)]++;
             }
-
+            
             return charData;
+        }
+
+        /// <summary>
+        /// 计算字符分析结果数组中有效字符（出现次数大于0）的个数
+        /// </summary>
+        /// <param name="charData">字符分析结果数组</param>
+        /// <returns>返回有效字符个数</returns>
+        public static int CountValidChar(int[] charData)
+        {
+            int validCount = 0;
+            foreach (int i in charData)
+            {
+                if (i > 0)
+                {
+                    validCount++;
+                }
+            }
+
+            return validCount;
         }
     }
 }
