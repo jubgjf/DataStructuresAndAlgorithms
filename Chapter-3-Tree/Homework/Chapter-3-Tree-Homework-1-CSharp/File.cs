@@ -37,7 +37,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         /// <summary>
         /// 字符分析数组的最大长度（ASCII所有字符的个数）
         /// </summary>
-        private const int MaxCharKinds = 128;
+        private const int MaxCharVariety = 128;
 
         /// <summary>
         /// 分析字符串中各个字符的出现次数
@@ -46,7 +46,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         /// <returns>返回分析结果数组，字符的ASCII码是数组下标位置</returns>
         public static int[] AnalyzeFrequency(string text)
         {
-            int[] charData = new int[MaxCharKinds];
+            int[] charData = new int[MaxCharVariety];
             foreach (char c in text)
             {
                 charData[Convert.ToInt32(c)]++;

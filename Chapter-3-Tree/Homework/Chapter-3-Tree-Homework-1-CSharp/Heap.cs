@@ -20,7 +20,8 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         public struct CharData
         {
             public char Char;
-            public int Frequency;
+            public int Weight;
+            public int Index;
         }
 
         /// <summary>
@@ -46,7 +47,30 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         }
 
         /// <summary>
-        /// 向堆中插入新元素，并更新大顶堆
+        /// 获取两个孩子节点中，权值最小的孩子节点在栈中的下标
+        /// </summary>
+        /// <param name="parentIndex">父节点下标</param>
+        /// <returns>返回孩子节点下标</returns>
+        private int MinChildIndex(int parentIndex)
+        {
+            if (parentIndex * 2 + 1 <= _lastIndex)
+            {
+                return _heapData[parentIndex * 2].Weight < _heapData[parentIndex * 2 + 1].Weight
+                    ? parentIndex * 2
+                    : parentIndex * 2 + 1;
+            }
+            else if (parentIndex * 2 <= _lastIndex)
+            {
+                return parentIndex * 2;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// 向堆中插入新元素，并更新小顶堆
         /// </summary>
         /// <param name="charData">待插入的元素</param>
         public void Insert(CharData charData)
@@ -57,9 +81,13 @@ namespace Chapter_3_Tree_Homework_1_CSharp
             int newElementIndex = _lastIndex;
 
             // 更新堆
-            if (newElementIndex == 1) { return; }
+            if (newElementIndex == 1)
+            {
+                return;
+            }
+
             while (Convert.ToInt32(newElementIndex / 2) != 0 &&
-                   _heapData[Convert.ToInt32(newElementIndex / 2)].Frequency < charData.Frequency)
+                   _heapData[Convert.ToInt32(newElementIndex / 2)].Weight > charData.Weight)
             {
                 Swap(ref _heapData[Convert.ToInt32(newElementIndex / 2)], ref _heapData[newElementIndex]);
                 newElementIndex = Convert.ToInt32(newElementIndex / 2);
@@ -67,28 +95,27 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         }
 
         /// <summary>
-        /// 删除堆顶元素，并更新大顶堆
+        /// 删除堆顶元素，并更新小顶堆
         /// </summary>
         /// <returns>返回原堆顶元素</returns>
         public CharData Pop()
         {
             // 交换根和最后一个元素
+            CharData originTop = _heapData[1];
             Swap(ref _heapData[1], ref _heapData[_lastIndex]);
+            _heapData[_lastIndex].Weight = 0;
             _lastIndex--;
             int currentElementIndex = 1;
 
             // 更新堆
             while (true)
             {
-                if (_heapData[currentElementIndex].Frequency < _heapData[currentElementIndex * 2].Frequency)
+                int minChildIndex = MinChildIndex(currentElementIndex);
+                if (minChildIndex != -1 &&
+                    _heapData[currentElementIndex].Weight > _heapData[minChildIndex].Weight)
                 {
-                    Swap(ref _heapData[currentElementIndex], ref _heapData[currentElementIndex * 2]);
-                    currentElementIndex = currentElementIndex * 2;
-                }
-                else if (_heapData[currentElementIndex].Frequency < _heapData[currentElementIndex * 2 + 1].Frequency)
-                {
-                    Swap(ref _heapData[currentElementIndex], ref _heapData[currentElementIndex * 2 + 1]);
-                    currentElementIndex = currentElementIndex * 2 + 1;
+                    Swap(ref _heapData[currentElementIndex], ref _heapData[minChildIndex]);
+                    currentElementIndex = minChildIndex;
                 }
                 else
                 {
@@ -96,7 +123,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
                 }
             }
 
-            return _heapData[_lastIndex + 1];
+            return originTop;
         }
 
         /// <summary>
@@ -106,6 +133,15 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         public CharData Top()
         {
             return _heapData[1];
+        }
+
+        /// <summary>
+        /// 查询堆是否为空
+        /// </summary>
+        /// <returns>返回堆为空的结果</returns>
+        public bool IsEmpty()
+        {
+            return _lastIndex == 0;
         }
     }
 }
