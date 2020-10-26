@@ -47,7 +47,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-3-Tree-Practice-3",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-3-Tree-Practice-4", "Chapter-3-Tree\Practice\Chapter-3-Tree-Practice-4\Chapter-3-Tree-Practice-4.vcxproj", "{F3F24E98-887B-406E-8A0C-C87E4D1BCDF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter-3-Tree-Homework-1-CSharp", "Chapter-3-Tree\Homework\Chapter-3-Tree-Homework-1-CSharp\Chapter-3-Tree-Homework-1-CSharp.csproj", "{C351DB03-FA72-45EC-B3B6-AC8E1E374434}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter-3-Tree-Homework-1-CSharp", "Chapter-3-Tree\Homework\Chapter-3-Tree-Homework-1-CSharp\Chapter-3-Tree-Homework-1-CSharp.csproj", "{C351DB03-FA72-45EC-B3B6-AC8E1E374434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter-4-Graph-Experiment-1-CSharp", "Chapter-4-Graph\Experiment\Chapter-4-Graph-Experiment-1-CSharp\Chapter-4-Graph-Experiment-1-CSharp.csproj", "{5E9257A4-3741-4636-A9DF-63576741A08F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -293,6 +295,18 @@ Global
 		{C351DB03-FA72-45EC-B3B6-AC8E1E374434}.Release|x64.Build.0 = Release|Any CPU
 		{C351DB03-FA72-45EC-B3B6-AC8E1E374434}.Release|x86.ActiveCfg = Release|Any CPU
 		{C351DB03-FA72-45EC-B3B6-AC8E1E374434}.Release|x86.Build.0 = Release|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Debug|x64.Build.0 = Debug|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|x64.ActiveCfg = Release|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|x64.Build.0 = Release|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
