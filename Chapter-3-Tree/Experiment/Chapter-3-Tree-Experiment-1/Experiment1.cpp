@@ -10,6 +10,7 @@ void TestExperiment1()
 
     // 课件用例：ABDH##I##E##CF#J##G##
 
+    cout << "pre order travel without recurse:\t";
     PreOrderTravel(tree);
     cout << endl;
     

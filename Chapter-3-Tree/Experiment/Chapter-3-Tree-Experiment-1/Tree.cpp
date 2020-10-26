@@ -1,7 +1,4 @@
-﻿#include <cmath>
-#include <iostream>
-#include <queue>
-#include <stack>
+﻿#include <iostream>
 #include "header.h"
 
 using namespace std;
@@ -40,21 +37,20 @@ void PreOrderTravel(Tree tree)
     // 若不为空，则将P的左孩子置为当前的结点P
     // 3. 直到P为NULL并且栈为空，则遍历结束
 
-    stack<Tree> nodeStack;
+    Stack* nodeStack = InitStack();
     Node* node = tree;
 
-    while (node != nullptr || !nodeStack.empty())
+    while (node != nullptr || !IsEmpty(nodeStack))
     {
         while (node != nullptr)
         {
             cout << node->data;
-            nodeStack.push(node);
+            Push(nodeStack, node);
             node = node->leftChild;
         }
-        if (!nodeStack.empty())
+        if (!IsEmpty(nodeStack))
         {
-            node = nodeStack.top();
-            nodeStack.pop();
+            node = Pop(nodeStack);
             node = node->rightChild;
         }
     }
@@ -71,21 +67,20 @@ void PreOrderTravel_Recurse(Tree tree)
 
 void InOrderTravel(Tree tree)
 {
-    stack<Tree> nodeStack;
+    Stack* nodeStack = InitStack();
     Node* node = tree;
 
-    while (node != nullptr || !nodeStack.empty())
+    while (node != nullptr || !IsEmpty(nodeStack))
     {
         while (node != nullptr)
         {
-            nodeStack.push(node);
+            Push(nodeStack, node);
             node = node->leftChild;
         }
-        if (!nodeStack.empty())
+        if (!IsEmpty(nodeStack))
         {
-            node = nodeStack.top();
+            node = Pop(nodeStack);
             cout << node->data;
-            nodeStack.pop();
             node = node->rightChild;
         }
     }
@@ -105,29 +100,28 @@ void PostOrderTravel(Tree tree)
     // 前序遍历为：根->左->右，后序遍历为：左->右->根
     // 只需类似前序遍历，记录“根->右->左”，再进行逆序，便得到左->右->根
 
-    stack<Tree> nodeStack, reverseStack;
+    Stack* nodeStack = InitStack();
+    Stack* reverseStack = InitStack();
     Node* node = tree;
 
-    while (node != nullptr || !nodeStack.empty())
+    while (node != nullptr || !IsEmpty(nodeStack))
     {
         while (node != nullptr)
         {
-            reverseStack.push(node);
-            nodeStack.push(node);
+            Push(reverseStack, node);
+            Push(nodeStack, node);
             node = node->rightChild;
         }
-        if (!nodeStack.empty())
+        if (!IsEmpty(nodeStack))
         {
-            node = nodeStack.top();
-            nodeStack.pop();
+            node = Pop(nodeStack);
             node = node->leftChild;
         }
     }
 
-    while (!reverseStack.empty())
+    while (!IsEmpty(reverseStack))
     {
-        cout << reverseStack.top()->data;
-        reverseStack.pop();
+        cout << Pop(reverseStack)->data;
     }
 }
 
@@ -142,17 +136,16 @@ void PostOrderTravel_Recurse(Tree tree)
 
 void LayerTravel(Tree tree)
 {
-    queue<Tree> nodeQueue;
+    Queue* nodeQueue = InitQueue();
 
-    nodeQueue.push(tree);
+    Enqueue(nodeQueue, tree);
 
-    while (!nodeQueue.empty())
+    while (!IsEmpty(nodeQueue))
     {
-        Node* node = nodeQueue.front();
+        Node* node = Dequeue(nodeQueue);
         cout << node->data;
-        nodeQueue.pop();
-        if (node->leftChild != nullptr) { nodeQueue.push(node->leftChild); }
-        if (node->rightChild != nullptr) { nodeQueue.push(node->rightChild); }
+        if (node->leftChild != nullptr) { Enqueue(nodeQueue, node->leftChild); }
+        if (node->rightChild != nullptr) { Enqueue(nodeQueue, node->rightChild); }
     }
 }
 
@@ -162,16 +155,15 @@ bool IsCompleteBinaryTree(Tree tree)
     // 遇到第一个没有左孩子或者右孩子的结点，设置标记位 = true
     // 继续入队，如果再次遇到存在孩子的结点，一定不是完全二叉树
 
-    queue<Tree> nodeQueue;
+    Queue* nodeQueue = InitQueue();
 
     bool result = false;
 
-    nodeQueue.push(tree);
+    Enqueue(nodeQueue, tree);
 
-    while (!nodeQueue.empty())
+    while (!IsEmpty(nodeQueue))
     {
-        Node* node = nodeQueue.front();
-        nodeQueue.pop();
+        Node* node = Dequeue(nodeQueue);
 
         if (node->leftChild == nullptr && node->rightChild == nullptr)
         {
@@ -184,13 +176,13 @@ bool IsCompleteBinaryTree(Tree tree)
         else if (node->leftChild != nullptr && node->rightChild == nullptr)
         {
             if (result == true) { return false; }
-            nodeQueue.push(node->leftChild);
+            Enqueue(nodeQueue, node->leftChild);
         }
         else if (node->leftChild != nullptr && node->rightChild != nullptr)
         {
             if (result == true) { return false; }
-            nodeQueue.push(node->leftChild);
-            nodeQueue.push(node->rightChild);
+            Enqueue(nodeQueue, node->leftChild);
+            Enqueue(nodeQueue, node->rightChild);
         }
     }
 
@@ -248,22 +240,21 @@ vector<Node*> GetPublicAncestors(Tree tree, elementType node1Data, elementType n
 
 Node* FindNodeByData(Tree tree, elementType data)
 {
-    stack<Tree> nodeStack;
+    Stack* nodeStack = InitStack();
     Node* node = tree;
 
     // 先序遍历
-    while (node != nullptr || !nodeStack.empty())
+    while (node != nullptr || !IsEmpty(nodeStack))
     {
         while (node != nullptr)
         {
             if (node->data == data) { return node; }
-            nodeStack.push(node);
+            Push(nodeStack, node);
             node = node->leftChild;
         }
-        if (!nodeStack.empty())
+        if (!IsEmpty(nodeStack))
         {
-            node = nodeStack.top();
-            nodeStack.pop();
+            node = Pop(nodeStack);
             node = node->rightChild;
         }
     }

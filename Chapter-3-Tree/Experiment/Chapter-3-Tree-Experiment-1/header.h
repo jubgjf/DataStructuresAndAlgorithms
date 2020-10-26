@@ -3,6 +3,96 @@
 #include <vector>
 
 
+/* Stack.cpp */
+
+/**
+ * \brief 栈的存储池最大空间
+ */
+#define MAX_STACK_SIZE 1000
+
+ /// <summary>
+ /// 站的存储池
+ /// </summary>
+struct Stack
+{
+    struct Node* storePool[MAX_STACK_SIZE];
+    int topIndex;
+};
+
+/// <summary>
+/// 初始化栈
+/// </summary>
+/// <returns>返回空栈</returns>
+Stack* InitStack();
+
+/// <summary>
+/// 判断栈是否为空
+/// </summary>
+/// <param name="stack">栈</param>
+/// <returns>返回栈为空的结果</returns>
+bool IsEmpty(Stack* stack);
+
+/// <summary>
+/// 将数据压栈
+/// </summary>
+/// <param name="stack">栈</param>
+/// <param name="data">待压栈数据</param>
+void Push(Stack* stack, struct Node* data);
+
+/// <summary>
+/// 弹栈
+/// </summary>
+/// <param name="stack">栈</param>
+/// <returns>返回弹出的元素</returns>
+struct Node* Pop(Stack* stack);
+
+/// <summary>
+/// 获取栈顶元素
+/// </summary>
+/// <param name="stack">栈</param>
+/// <returns>返回栈顶元素</returns>
+struct Node* Top(Stack* stack);
+
+
+/* Queue.cpp */
+
+/// <summary>
+/// 用两个栈模拟的队列结构
+/// </summary>
+struct Queue
+{
+    Stack* enqueueStack;
+    Stack* dequeueStack;
+};
+
+/// <summary>
+/// 初始化队列
+/// </summary>
+/// <returns>返回空队列</returns>
+Queue* InitQueue();
+
+/// <summary>
+/// 查询队列是否为空
+/// </summary>
+/// <param name="queue">队列</param>
+/// <returns>返回队列是否为空</returns>
+bool IsEmpty(Queue* queue);
+
+/// <summary>
+/// 入队
+/// </summary>
+/// <param name="queue">队列</param>
+/// <param name="data">待入队元素</param>
+void Enqueue(Queue* queue, struct Node* data);
+
+/// <summary>
+/// 出队
+/// </summary>
+/// <param name="queue">队列</param>
+/// <returns>返回出队元素</returns>
+struct Node* Dequeue(Queue* queue);
+
+
 /* Tree.cpp */
 
 /**
@@ -10,9 +100,9 @@
  */
 #define MAX_NODE_COUNT 500
 
-/**
- * \brief 树中节点储存的数据类型
- */
+ /**
+  * \brief 树中节点储存的数据类型
+  */
 typedef char elementType;
 
 /// <summary>
