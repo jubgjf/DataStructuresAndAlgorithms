@@ -37,3 +37,16 @@ Node* Top(Stack* stack)
 
     return stack->storePool[stack->topIndex];
 }
+
+Stack* Reverse(Stack* stack)
+{
+    Stack* reverseStack = InitStack();
+
+    while (!IsEmpty(stack))
+    {
+        Push(reverseStack, Pop(stack));
+    }
+    delete stack;
+
+    return reverseStack;
+}

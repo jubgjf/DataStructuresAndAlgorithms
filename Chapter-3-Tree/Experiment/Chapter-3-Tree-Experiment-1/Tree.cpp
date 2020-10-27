@@ -189,48 +189,55 @@ bool IsCompleteBinaryTree(Tree tree)
     return true;
 }
 
-void GetPathFromRoot(Tree tree, Node* node, vector<Node*>& tempPath, vector<Node*>& finalPath)
+void GetPathToRoot(Tree tree, Node* node, Stack* nodePathToRoot, bool* found)
 {
-    if (tree == nullptr) { return; }
+    if (*found || tree == nullptr) { return; }
 
-    tempPath.push_back(tree);
-
+    Push(nodePathToRoot, tree);
     if (tree == node)
     {
-        finalPath = tempPath;
+        *found = true;
         return;
     }
 
-    if (tree->leftChild != nullptr) { GetPathFromRoot(tree->leftChild, node, tempPath, finalPath); }
-    if (tree->rightChild != nullptr) { GetPathFromRoot(tree->rightChild, node, tempPath, finalPath); }
+    if (tree->leftChild != nullptr)
+    {
+        GetPathToRoot(tree->leftChild, node, nodePathToRoot, found);
+        if (*found) { return; }
+    }
+    if (tree->rightChild != nullptr)
+    {
+        GetPathToRoot(tree->rightChild, node, nodePathToRoot, found);
+        if (*found) { return; }
+    }
 
-    tempPath.pop_back();
+    Pop(nodePathToRoot);
 }
 
-vector<Node*> GetPublicAncestors(Tree tree, Node* node1, Node* node2)
+Node** GetPublicAncestors(Tree tree, Node* node1, Node* node2)
 {
-    vector<Node*> node1PathToRoot, node2PathToRoot;
-    vector<Node*> tempPath1, tempPath2;
-    vector<Node*> publicAncestors;
+    Stack* node1PathToRoot = InitStack();
+    Stack* node2PathToRoot = InitStack();
+    bool foundNode1 = false, foundNode2 = false;
+    GetPathToRoot(tree, node1, node1PathToRoot, &foundNode1);
+    GetPathToRoot(tree, node2, node2PathToRoot, &foundNode2);
+    Node* publicAncestors[MAX_NODE_COUNT] = { nullptr };
 
-    GetPathFromRoot(tree, node1, tempPath1, node1PathToRoot);
-    GetPathFromRoot(tree, node2, tempPath2, node2PathToRoot);
+    Stack* node1PathFromRoot = Reverse(node1PathToRoot);
+    Stack* node2PathFromRoot = Reverse(node2PathToRoot);
 
-    for (unsigned i = 0; i < node1PathToRoot.size(); ++i)
+    for (int i = 0; Top(node1PathFromRoot) == Top(node2PathFromRoot); ++i)
     {
-        for (unsigned j = 0; j < node2PathToRoot.size(); ++j)
-        {
-            if (node1PathToRoot[i] == node2PathToRoot[j])
-            {
-                publicAncestors.push_back(node1PathToRoot[i]);
-            }
-        }
+        if (Top(node1PathFromRoot) == nullptr) { break; }
+
+        publicAncestors[i] = Pop(node1PathFromRoot);
+        Pop(node2PathFromRoot);
     }
 
     return publicAncestors;
 }
 
-vector<Node*> GetPublicAncestors(Tree tree, elementType node1Data, elementType node2Data)
+Node** GetPublicAncestors(Tree tree, elementType node1Data, elementType node2Data)
 {
     Node* node1 = FindNodeByData(tree, node1Data);
     Node* node2 = FindNodeByData(tree, node2Data);

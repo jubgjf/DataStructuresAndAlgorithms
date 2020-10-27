@@ -1,7 +1,5 @@
 #pragma once
 
-#include <vector>
-
 
 /* Stack.cpp */
 
@@ -52,6 +50,13 @@ struct Node* Pop(Stack* stack);
 /// <param name="stack">栈</param>
 /// <returns>返回栈顶元素</returns>
 struct Node* Top(Stack* stack);
+
+/// <summary>
+/// 反向储存一个栈
+/// </summary>
+/// <param name="stack">栈</param>
+/// <returns>返回逆序的栈</returns>
+Stack* Reverse(Stack* stack);
 
 
 /* Queue.cpp */
@@ -185,13 +190,13 @@ void LayerTravel(Tree tree);
 bool IsCompleteBinaryTree(Tree tree);
 
 /// <summary>
-/// 获取根节点到指定节点的路径
+/// 获取指定节点到根节点的路径
 /// </summary>
 /// <param name="tree">树</param>
 /// <param name="node">节点</param>
-/// <param name="tempPath">递归时的临时路径</param>
-/// <param name="finalPath">最终路径</param>
-void GetPathFromRoot(Tree tree, Node* node, std::vector<Node*>& tempPath, std::vector<Node*>& finalPath);
+/// <param name="nodePathToRoot">从指定节点到根的路径</param>
+/// <param name="found">找到路径的标志，用于跳出递归</param>
+void GetPathToRoot(Tree tree, Node* node, Stack* nodePathToRoot, bool* found);
 
 /// <summary>
 /// 获取两个节点的公共祖先
@@ -200,7 +205,7 @@ void GetPathFromRoot(Tree tree, Node* node, std::vector<Node*>& tempPath, std::v
 /// <param name="node1">第一个节点</param>
 /// <param name="node2">第二个节点</param>
 /// <returns>返回两个节点的所有公共祖先</returns>
-std::vector<Node*> GetPublicAncestors(Tree tree, Node* node1, Node* node2);
+Node** GetPublicAncestors(Tree tree, Node* node1, Node* node2);
 
 /// <summary>
 /// 获取两个节点的公共祖先
@@ -209,7 +214,7 @@ std::vector<Node*> GetPublicAncestors(Tree tree, Node* node1, Node* node2);
 /// <param name="node1Data">第一个节点储存的数据</param>
 /// <param name="node2Data">第二个节点储存的数据</param>
 /// <returns>返回两个节点的所有公共祖先</returns>
-std::vector<Node*> GetPublicAncestors(Tree tree, elementType node1Data, elementType node2Data);
+Node** GetPublicAncestors(Tree tree, elementType node1Data, elementType node2Data);
 
 /// <summary>
 /// 根据数据寻找节点
