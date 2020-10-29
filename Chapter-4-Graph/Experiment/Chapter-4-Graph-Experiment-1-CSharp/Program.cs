@@ -2,21 +2,21 @@
 
 namespace Chapter_4_Graph_Experiment_1_CSharp
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("===== Matrix Graph Test =====");
             MatrixGraph matrixGraph = new MatrixGraph("matrix.txt");
-            
+
             Console.WriteLine("BFS");
             matrixGraph.BFSTravel();
             Console.WriteLine(Environment.NewLine);
-            
+
             Console.WriteLine("DFS");
             matrixGraph.DFSTravel();
             Console.WriteLine(Environment.NewLine);
-            
+
             Console.WriteLine("DFS Recurse");
             matrixGraph.DFSTravel_Recurse();
             Console.WriteLine(Environment.NewLine);

@@ -14,9 +14,7 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
             using StreamReader sr = new StreamReader(fileName);
 
             string firstLine = sr.ReadLine();
-            string[] numString = firstLine.Split(' ');
-
-            return numString.Length;
+            return firstLine != null ? firstLine.Split(' ').Length : 0;
         }
 
         /// <summary>
@@ -34,10 +32,13 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
             for (int i = 0; i < nodeCount; i++)
             {
                 string line = sr.ReadLine();
-                string[] numString = line.Split(' ');
-                for (int j = 0; j < nodeCount; j++)
+                if (line != null)
                 {
-                    matrix[i, j] = int.Parse(numString[j]);
+                    string[] numString = line.Split(' ');
+                    for (int j = 0; j < nodeCount; j++)
+                    {
+                        matrix[i, j] = int.Parse(numString[j]);
+                    }
                 }
             }
 
@@ -73,14 +74,17 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
             for (int i = 0; i < linesCount; i++)
             {
                 string lineString = sr.ReadLine();
-                string[] numString = lineString.Split(' ');
-                int[] lineNum = new int[numString.Length];
-                for (int j = 0; j < numString.Length; j++)
+                if (lineString != null)
                 {
-                    lineNum[j] = int.Parse(numString[j]);
-                }
+                    string[] numString = lineString.Split(' ');
+                    int[] lineNum = new int[numString.Length];
+                    for (int j = 0; j < numString.Length; j++)
+                    {
+                        lineNum[j] = int.Parse(numString[j]);
+                    }
 
-                list[i] = lineNum;
+                    list[i] = lineNum;
+                }
             }
 
             return list;
