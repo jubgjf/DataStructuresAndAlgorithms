@@ -24,37 +24,42 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
             Stack nodeStack = new Stack();
             bool[] traveled = new bool[NodeCount];
 
-            // TODO 遍历多个支
-            int currentNodeIndex = 0;
-            nodeStack.Push(currentNodeIndex);
-            Console.Write(currentNodeIndex + "-");
-            traveled[currentNodeIndex] = true;
-            while (!nodeStack.IsEmpty())
+            for (int i = 0; i < NodeCount; i++)
             {
-                bool findUntraveledAdjacent = false;
-                // 在相邻节点中，查找未走过的节点
-                foreach (int adjacent in GetAdjacent(currentNodeIndex))
+                if (!traveled[i])
                 {
-                    if (!traveled[adjacent])
+                    int currentNodeIndex = i;
+                    nodeStack.Push(currentNodeIndex);
+                    Console.Write(currentNodeIndex + "-");
+                    traveled[currentNodeIndex] = true;
+                    while (!nodeStack.IsEmpty())
                     {
-                        findUntraveledAdjacent = true;
-                        currentNodeIndex = adjacent;
-                        nodeStack.Push(currentNodeIndex);
-                        Console.Write(currentNodeIndex + "-");
-                        traveled[currentNodeIndex] = true;
-                        break;
-                    }
-                }
+                        bool findUntraveledAdjacent = false;
+                        // 在相邻节点中，查找未走过的节点
+                        foreach (int adjacent in GetAdjacent(currentNodeIndex))
+                        {
+                            if (!traveled[adjacent])
+                            {
+                                findUntraveledAdjacent = true;
+                                currentNodeIndex = adjacent;
+                                nodeStack.Push(currentNodeIndex);
+                                Console.Write(currentNodeIndex + "-");
+                                traveled[currentNodeIndex] = true;
+                                break;
+                            }
+                        }
 
-                // 没有未走过的相邻节点
-                if (!findUntraveledAdjacent)
-                {
-                    nodeStack.Pop();
-                    currentNodeIndex = nodeStack.Top();
+                        // 没有未走过的相邻节点
+                        if (!findUntraveledAdjacent)
+                        {
+                            nodeStack.Pop();
+                            currentNodeIndex = nodeStack.Top();
+                        }
+                    }
+
+                    Console.Write("\b " + Environment.NewLine);
                 }
             }
-
-            Console.Write("\b ");
         }
 
         /// <summary>
@@ -104,23 +109,29 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
             bool[] traveled = new bool[NodeCount];
             Queue nodeQueue = new Queue();
 
-            // TODO 遍历多个支
-            nodeQueue.Enqueue(0);
-            traveled[0] = true;
-            while (!nodeQueue.IsEmpty())
+            for (int i = 0; i < NodeCount; i++)
             {
-                int currentNodeIndex = nodeQueue.Dequeue();
-                Console.Write(currentNodeIndex + "-");
-                traveled[currentNodeIndex] = true;
-                foreach (int adjacent in GetAdjacent(currentNodeIndex))
+                if (!traveled[i])
                 {
-                    if (!traveled[adjacent])
+                    nodeQueue.Enqueue(i);
+                    traveled[i] = true;
+                    while (!nodeQueue.IsEmpty())
                     {
-                        nodeQueue.Enqueue(adjacent);
+                        int currentNodeIndex = nodeQueue.Dequeue();
+                        Console.Write(currentNodeIndex + "-");
+                        foreach (int adjacent in GetAdjacent(currentNodeIndex))
+                        {
+                            if (!traveled[adjacent])
+                            {
+                                nodeQueue.Enqueue(adjacent);
+                                traveled[adjacent] = true;
+                            }
+                        }
                     }
+
+                    Console.Write("\b " + Environment.NewLine);
                 }
             }
-            Console.Write("\b ");
         }
 
         /// <summary>
