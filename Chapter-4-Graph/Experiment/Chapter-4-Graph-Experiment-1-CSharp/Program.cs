@@ -8,34 +8,18 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
         {
             Console.WriteLine("===== Matrix Graph Test =====");
             MatrixGraph matrixGraph = new MatrixGraph("matrix.txt");
-
-            Console.WriteLine("BFS");
-            matrixGraph.BFSTravel();
-            Console.WriteLine(Environment.NewLine);
-
-            Console.WriteLine("DFS");
-            matrixGraph.DFSTravel();
-            Console.WriteLine(Environment.NewLine);
-
-            Console.WriteLine("DFS Recurse");
-            matrixGraph.DFSTravel_Recurse();
-            Console.WriteLine(Environment.NewLine);
+            matrixGraph.TestTravel();
+            // int[][] list = matrixGraph.ConvertToListGraph();
+            //
+            // ListGraph l = new ListGraph(list);
 
 
             Console.WriteLine("===== List Graph Test =====");
             ListGraph listGraph = new ListGraph("list.txt");
-
-            Console.WriteLine("BFS");
-            listGraph.BFSTravel();
-            Console.WriteLine(Environment.NewLine);
-
-            Console.WriteLine("DFS");
-            listGraph.DFSTravel();
-            Console.WriteLine(Environment.NewLine);
-
-            Console.WriteLine("DFS Recurse");
-            listGraph.DFSTravel_Recurse();
-            Console.WriteLine(Environment.NewLine);
+            listGraph.TestTravel();
+            // int[,] matrix = listGraph.ConvertToMatrixGraph();
+            //
+            // MatrixGraph m = new MatrixGraph(matrix);
         }
     }
 }

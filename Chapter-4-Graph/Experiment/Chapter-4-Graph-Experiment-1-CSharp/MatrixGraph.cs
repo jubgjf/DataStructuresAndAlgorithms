@@ -13,6 +13,16 @@
         }
 
         /// <summary>
+        /// 初始化图的邻接矩阵和节点数
+        /// </summary>
+        /// <param name="matrix">图的邻接矩阵</param>
+        public MatrixGraph(int[,] matrix)
+        {
+            NodeCount = matrix.GetLength(0);
+            Matrix = matrix;
+        }
+
+        /// <summary>
         /// 图的邻接矩阵
         /// </summary>
         private int[,] Matrix { get; set; }
@@ -38,6 +48,41 @@
             }
 
             return neighbors;
+        }
+
+        /// <summary>
+        /// 将用邻接矩阵表示的图，转换为用邻接表表示的图
+        /// </summary>
+        /// <returns>返回邻接表</returns>
+        public int[][] ConvertToListGraph()
+        {
+            int[][] list = new int[NodeCount][];
+
+            for (int i = 0; i < NodeCount; i++)
+            {
+                // 记录与节点i邻接的节点数量
+                int adjacentCount = 0;
+                for (int j = 0; j < NodeCount; j++)
+                {
+                    if (Matrix[i, j] != 0) { adjacentCount++; }
+                }
+
+                int[] adjacent = new int[adjacentCount + 1];
+                adjacent[0] = i;
+                int adjacentIndex = 1;
+                for (int j = 0; j < NodeCount && adjacentIndex < adjacentCount; j++)
+                {
+                    // 节点i到节点j有弧
+                    if (Matrix[i, j] != 0)
+                    {
+                        adjacent[adjacentIndex] = j;
+                    }
+                }
+
+                list[i] = adjacent;
+            }
+
+            return list;
         }
     }
 }

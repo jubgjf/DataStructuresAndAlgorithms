@@ -19,7 +19,7 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
         /// <summary>
         /// 深度优先搜索（非递归）
         /// </summary>
-        public void DFSTravel()
+        private void DFSTravel()
         {
             Stack nodeStack = new Stack();
             bool[] traveled = new bool[NodeCount];
@@ -60,7 +60,7 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
         /// <summary>
         /// 深度优先搜索（递归）
         /// </summary>
-        public void DFSTravel_Recurse()
+        private void DFSTravel_Recurse()
         {
             // TODO 无法区分有向图的弱连通和不在同一支
 
@@ -99,7 +99,7 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
         /// <summary>
         /// 广度优先搜索
         /// </summary>
-        public void BFSTravel()
+        private void BFSTravel()
         {
             bool[] traveled = new bool[NodeCount];
             Queue nodeQueue = new Queue();
@@ -121,6 +121,24 @@ namespace Chapter_4_Graph_Experiment_1_CSharp
                 }
             }
             Console.Write("\b ");
+        }
+
+        /// <summary>
+        /// 测试图的遍历
+        /// </summary>
+        public void TestTravel()
+        {
+            Console.WriteLine("BFS");
+            BFSTravel();
+            Console.WriteLine(Environment.NewLine);
+
+            Console.WriteLine("DFS");
+            DFSTravel();
+            Console.WriteLine(Environment.NewLine);
+
+            Console.WriteLine("DFS Recurse");
+            DFSTravel_Recurse();
+            Console.WriteLine(Environment.NewLine);
         }
     }
 }
