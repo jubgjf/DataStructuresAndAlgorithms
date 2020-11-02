@@ -151,13 +151,12 @@ void LayerTravel(Tree tree)
 
 bool IsCompleteBinaryTree(Tree tree)
 {
-    // 层序遍历，如果队列不为空，一直循环
-    // 遇到第一个没有左孩子或者右孩子的结点，设置标记位 = true
-    // 继续入队，如果再次遇到存在孩子的结点，一定不是完全二叉树
+    // 层序遍历，将空节点也入队
+    // 出队遇到第一个空节点时，记录标志为true
+    // 如果在遇到空节点之后，还有非空节点，则一定是非完全二叉树
 
     Queue* nodeQueue = InitQueue();
-
-    bool result = false;
+    bool hasEncounteredNull = false;
 
     Enqueue(nodeQueue, tree);
 
@@ -165,22 +164,17 @@ bool IsCompleteBinaryTree(Tree tree)
     {
         Node* node = Dequeue(nodeQueue);
 
-        if (node->leftChild == nullptr && node->rightChild == nullptr)
+        if (node == nullptr)
         {
-            result = true;
+            hasEncounteredNull = true;
+            continue;
         }
-        else if (node->leftChild == nullptr && node->rightChild != nullptr)
+        else if (hasEncounteredNull)
         {
             return false;
         }
-        else if (node->leftChild != nullptr && node->rightChild == nullptr)
+        else
         {
-            if (result == true) { return false; }
-            Enqueue(nodeQueue, node->leftChild);
-        }
-        else if (node->leftChild != nullptr && node->rightChild != nullptr)
-        {
-            if (result == true) { return false; }
             Enqueue(nodeQueue, node->leftChild);
             Enqueue(nodeQueue, node->rightChild);
         }

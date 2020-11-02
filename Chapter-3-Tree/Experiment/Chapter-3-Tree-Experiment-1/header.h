@@ -9,7 +9,7 @@
 #define MAX_STACK_SIZE 1000
 
  /// <summary>
- /// Õ¾µÄ´æ´¢³Ø
+ /// Õ»µÄ´æ´¢³Ø
  /// </summary>
 struct Stack
 {
