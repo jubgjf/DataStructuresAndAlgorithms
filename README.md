@@ -61,8 +61,32 @@
 
 ## 第四章 图
 
+### 作业
+
+|内容|完成情况|链接|
+|:-:|:-:|:-:|
+|农夫过河问题|:grey_exclamation:|[作业一](./Chapter-4-Graph/Homework/Chapter-4-Graph-Homework-1)|
+
 ### 实验
 
 |内容|完成情况|链接|
 |:-:|:-:|:-:|
 |图结构及其应用|:heavy_check_mark:|[实验一](./Chapter-4-Graph/Experiment/Chapter-4-Graph-Experiment-1-CSharp)|
+
+### 练习
+
+|内容|完成情况|链接|
+|:-:|:-:|:-:|
+|最小生成树|:grey_exclamation:|[练习一](./Chapter-4-Graph/Practice/Chapter-4-Graph-Practice-1)|
+|单源最短路径|:grey_exclamation:|[练习二](./Chapter-4-Graph/Practice/Chapter-4-Graph-Practice-2)|
+|小岛造桥问题|:grey_exclamation:|[练习三](./Chapter-4-Graph/Practice/Chapter-4-Graph-Practice-3)|
+
+## 第五章 查找
+
+### 练习
+
+|内容|完成情况|链接|
+|:-:|:-:|:-:|
+|分块查找|:grey_exclamation:|[练习一](./Chapter-5-Search/Practice/Chapter-5-Search-Practice-1)|
+|二叉查找树|:grey_exclamation:|[练习二](./Chapter-5-Search/Practice/Chapter-5-Search-Practice-2)|
+|AVL树|:grey_exclamation:|[练习三](./Chapter-5-Search/Practice/Chapter-5-Search-Practice-3)|
