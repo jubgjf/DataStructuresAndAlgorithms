@@ -30,7 +30,7 @@ namespace Chapter_3_Tree_Homework_1_CSharp
         private CharData[] _heapData = new CharData[MaxHeapSize];
 
         /// <summary>
-        /// 堆数据数组的最有一个元素下标
+        /// 堆数据数组的最后一个元素下标
         /// </summary>
         private int _lastIndex;
 
