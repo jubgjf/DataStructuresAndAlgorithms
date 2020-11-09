@@ -53,6 +53,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter-4-Graph-Experiment-
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-4-Graph-Practice-2", "Chapter-4-Graph\Practice\Chapter-4-Graph-Practice-2\Chapter-4-Graph-Practice-2.vcxproj", "{9D5959AB-0715-4420-912C-196441854E74}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-4-Graph-Homework-1", "Chapter-4-Graph\Homework\Chapter-4-Graph-Homework-1\Chapter-4-Graph-Homework-1.vcxproj", "{742E5BF1-3306-455A-B849-6A64A43FC52A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -319,6 +321,16 @@ Global
 		{9D5959AB-0715-4420-912C-196441854E74}.Release|x64.Build.0 = Release|x64
 		{9D5959AB-0715-4420-912C-196441854E74}.Release|x86.ActiveCfg = Release|Win32
 		{9D5959AB-0715-4420-912C-196441854E74}.Release|x86.Build.0 = Release|Win32
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Debug|x64.ActiveCfg = Debug|x64
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Debug|x64.Build.0 = Debug|x64
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Debug|x86.ActiveCfg = Debug|Win32
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Debug|x86.Build.0 = Debug|Win32
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Release|Any CPU.ActiveCfg = Release|Win32
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Release|x64.ActiveCfg = Release|x64
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Release|x64.Build.0 = Release|x64
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Release|x86.ActiveCfg = Release|Win32
+		{742E5BF1-3306-455A-B849-6A64A43FC52A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

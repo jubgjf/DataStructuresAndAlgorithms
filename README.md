@@ -65,7 +65,7 @@
 
 |内容|完成情况|链接|
 |:-:|:-:|:-:|
-|农夫过河问题|:grey_exclamation:|[作业一](./Chapter-4-Graph/Homework/Chapter-4-Graph-Homework-1)|
+|农夫过河问题|:heavy_check_mark:|[作业一](./Chapter-4-Graph/Homework/Chapter-4-Graph-Homework-1)|
 
 ### 实验
 
