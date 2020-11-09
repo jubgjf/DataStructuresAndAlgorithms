@@ -49,7 +49,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-3-Tree-Practice-4",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter-3-Tree-Homework-1-CSharp", "Chapter-3-Tree\Homework\Chapter-3-Tree-Homework-1-CSharp\Chapter-3-Tree-Homework-1-CSharp.csproj", "{C351DB03-FA72-45EC-B3B6-AC8E1E374434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter-4-Graph-Experiment-1-CSharp", "Chapter-4-Graph\Experiment\Chapter-4-Graph-Experiment-1-CSharp\Chapter-4-Graph-Experiment-1-CSharp.csproj", "{5E9257A4-3741-4636-A9DF-63576741A08F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter-4-Graph-Experiment-1-CSharp", "Chapter-4-Graph\Experiment\Chapter-4-Graph-Experiment-1-CSharp\Chapter-4-Graph-Experiment-1-CSharp.csproj", "{5E9257A4-3741-4636-A9DF-63576741A08F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-4-Graph-Practice-2", "Chapter-4-Graph\Practice\Chapter-4-Graph-Practice-2\Chapter-4-Graph-Practice-2.vcxproj", "{9D5959AB-0715-4420-912C-196441854E74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -307,6 +309,16 @@ Global
 		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|x64.Build.0 = Release|Any CPU
 		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|x86.ActiveCfg = Release|Any CPU
 		{5E9257A4-3741-4636-A9DF-63576741A08F}.Release|x86.Build.0 = Release|Any CPU
+		{9D5959AB-0715-4420-912C-196441854E74}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{9D5959AB-0715-4420-912C-196441854E74}.Debug|x64.ActiveCfg = Debug|x64
+		{9D5959AB-0715-4420-912C-196441854E74}.Debug|x64.Build.0 = Debug|x64
+		{9D5959AB-0715-4420-912C-196441854E74}.Debug|x86.ActiveCfg = Debug|Win32
+		{9D5959AB-0715-4420-912C-196441854E74}.Debug|x86.Build.0 = Debug|Win32
+		{9D5959AB-0715-4420-912C-196441854E74}.Release|Any CPU.ActiveCfg = Release|Win32
+		{9D5959AB-0715-4420-912C-196441854E74}.Release|x64.ActiveCfg = Release|x64
+		{9D5959AB-0715-4420-912C-196441854E74}.Release|x64.Build.0 = Release|x64
+		{9D5959AB-0715-4420-912C-196441854E74}.Release|x86.ActiveCfg = Release|Win32
+		{9D5959AB-0715-4420-912C-196441854E74}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

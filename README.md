@@ -78,7 +78,7 @@
 |内容|完成情况|链接|
 |:-:|:-:|:-:|
 |最小生成树|:grey_exclamation:|[练习一](./Chapter-4-Graph/Practice/Chapter-4-Graph-Practice-1)|
-|单源最短路径|:grey_exclamation:|[练习二](./Chapter-4-Graph/Practice/Chapter-4-Graph-Practice-2)|
+|单源最短路径|:heavy_check_mark:|[练习二](./Chapter-4-Graph/Practice/Chapter-4-Graph-Practice-2)|
 |小岛造桥问题|:grey_exclamation:|[练习三](./Chapter-4-Graph/Practice/Chapter-4-Graph-Practice-3)|
 
 ## 第五章 查找
