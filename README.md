@@ -90,3 +90,13 @@
 |分块查找|:grey_exclamation:|[练习一](./Chapter-5-Search/Practice/Chapter-5-Search-Practice-1)|
 |二叉查找树|:grey_exclamation:|[练习二](./Chapter-5-Search/Practice/Chapter-5-Search-Practice-2)|
 |AVL树|:grey_exclamation:|[练习三](./Chapter-5-Search/Practice/Chapter-5-Search-Practice-3)|
+|B树和B<sup>+</sup>树|:grey_exclamation:|[练习四](./Chapter-5-Search/Practice/Chapter-5-Search-Practice-4)|
+|散列技术|:grey_exclamation:|[练习五](./Chapter-5-Search/Practice/Chapter-5-Search-Practice-5)|
+
+## 第六章 内排序
+
+### 作业
+
+|内容|完成情况|链接|
+|:-:|:-:|:-:|
+|排序算法|:grey_exclamation:|[作业一](./Chapter-6-Sort/Homework/Chapter-6-Sort-Homework-1)|
