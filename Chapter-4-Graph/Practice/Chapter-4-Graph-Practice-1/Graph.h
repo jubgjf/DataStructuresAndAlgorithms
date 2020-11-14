@@ -46,6 +46,31 @@ struct Edges
 };
 
 /**
+ * \brief 初始化存储边的数组
+ * \return 返回空数组
+ */
+Edges* InitEdges();
+
+/**
+ * \brief 将图的邻接矩阵中边的信息储存在Edges数组中
+ * \param graph 图
+ * \param edges 储存边的数组
+ */
+void ConvertMatrixToEdges(Graph* graph, Edges* edges);
+
+/**
+ * \brief 根据边的权值，将边从小到大排序
+ * \param edges 存储所有边信息的数组
+ */
+void SortEdgesByWeight(Edges* edges);
+
+/**
+ * \brief 按照“权值 - 第一个端点 - 第二个端点”输出最小生成树
+ * \param minSpanningTreeEdges 最小生成树数组
+ */
+void PrintMinSpanningTree(Edges* minSpanningTreeEdges);
+
+/**
  * \brief Kruskal算法求无向图最小生成树
  * \param graph 无向图
  */
