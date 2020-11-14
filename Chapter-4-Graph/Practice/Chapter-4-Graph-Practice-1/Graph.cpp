@@ -23,8 +23,60 @@ Graph* InitGraph()
     return graph;
 }
 
-void Prim(Graph* graph)
+EdgeInfo SelectMinWeightEdge(Edges* edges)
 {
+    EdgeInfo minWeightEdge = edges->edgeInfo[0];
+    for (int i = 0; i < edges->lastIndex + 1; ++i)
+    {
+        if (edges->edgeInfo[i].weight < minWeightEdge.weight)
+        {
+            minWeightEdge = edges->edgeInfo[i];
+        }
+    }
+
+    return minWeightEdge;
+}
+
+void Prim(Graph* graph, int startIndex)
+{
+    bool visited[MAX_NODE_COUNT];
+    std::fill_n(visited, MAX_NODE_COUNT, false);
+
+    visited[startIndex] = true;
+
+    Edges* minSpanningTreeEdges = InitEdges();
+
+    while (minSpanningTreeEdges->lastIndex + 2 < graph->nodeCount)
+    {
+        // 找到所有以已选节点i为一个端点的边
+        Edges* adjacentEdges = InitEdges();
+        for (int i = 0; i < graph->nodeCount; i++)
+        {
+            if (visited[i])
+            {
+                // 找所有与节点i相邻的节点j
+                for (int j = 0; j < graph->nodeCount; ++j)
+                {
+                    if (graph->matrix[i][j] != INT_MAX / 2 && !visited[j])
+                    {
+                        adjacentEdges->lastIndex++;
+                        adjacentEdges->edgeInfo[adjacentEdges->lastIndex] =
+                            {graph->matrix[i][j], i, j};
+                    }
+                }
+            }
+        }
+
+        EdgeInfo minWeightEdge = SelectMinWeightEdge(adjacentEdges);
+
+        minSpanningTreeEdges->lastIndex++;
+        minSpanningTreeEdges->edgeInfo[minSpanningTreeEdges->lastIndex] = minWeightEdge;
+
+        visited[minWeightEdge.node1Index] = true;
+        visited[minWeightEdge.node2Index] = true;
+    }
+
+    PrintMinSpanningTree(minSpanningTreeEdges);
 }
 
 Edges* InitEdges()

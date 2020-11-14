@@ -21,10 +21,18 @@ struct Graph
 Graph* InitGraph();
 
 /**
+ * \brief 从边数组中选择出权值最小的边
+ * \param edges 所有边
+ * \return 返回权值最小的边
+ */
+struct EdgeInfo SelectMinWeightEdge(struct Edges* edges);
+
+/**
  * \brief Prim算法求无向图最小生成树
  * \param graph 无向图
+ * \param startIndex 开始计算最小生成树的节点
  */
-void Prim(Graph* graph);
+void Prim(Graph* graph, int startIndex);
 
 /**
  * \brief 图中边的信息
