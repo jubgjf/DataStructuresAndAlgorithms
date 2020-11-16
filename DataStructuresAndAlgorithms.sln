@@ -57,6 +57,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-4-Graph-Homework-1"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-4-Graph-Practice-1", "Chapter-4-Graph\Practice\Chapter-4-Graph-Practice-1\Chapter-4-Graph-Practice-1.vcxproj", "{558E4980-2B62-4C4B-9F9F-24BBD99383E2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter-5-Search-Practice-3", "Chapter-5-Search\Practice\Chapter-5-Search-Practice-3\Chapter-5-Search-Practice-3.vcxproj", "{BA7FC064-C837-44D8-BD21-2E62747F4ECC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -343,6 +345,16 @@ Global
 		{558E4980-2B62-4C4B-9F9F-24BBD99383E2}.Release|x64.Build.0 = Release|x64
 		{558E4980-2B62-4C4B-9F9F-24BBD99383E2}.Release|x86.ActiveCfg = Release|Win32
 		{558E4980-2B62-4C4B-9F9F-24BBD99383E2}.Release|x86.Build.0 = Release|Win32
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Debug|x64.ActiveCfg = Debug|x64
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Debug|x64.Build.0 = Debug|x64
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Debug|x86.ActiveCfg = Debug|Win32
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Debug|x86.Build.0 = Debug|Win32
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Release|Any CPU.ActiveCfg = Release|Win32
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Release|x64.ActiveCfg = Release|x64
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Release|x64.Build.0 = Release|x64
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Release|x86.ActiveCfg = Release|Win32
+		{BA7FC064-C837-44D8-BD21-2E62747F4ECC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
