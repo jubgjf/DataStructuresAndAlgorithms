@@ -33,7 +33,10 @@
 
             for (int i = 0; i < NodeCount; i++)
             {
-                if (Matrix[nodeIndex, i] != 0) { neighborCount++; }
+                if (Matrix[nodeIndex, i] != 0)
+                {
+                    neighborCount++;
+                }
             }
 
             int[] neighbors = new int[neighborCount];
@@ -64,18 +67,22 @@
                 int adjacentCount = 0;
                 for (int j = 0; j < NodeCount; j++)
                 {
-                    if (Matrix[i, j] != 0) { adjacentCount++; }
+                    if (Matrix[i, j] != 0)
+                    {
+                        adjacentCount++;
+                    }
                 }
 
                 int[] adjacent = new int[adjacentCount + 1];
                 adjacent[0] = i;
                 int adjacentIndex = 1;
-                for (int j = 0; j < NodeCount && adjacentIndex < adjacentCount; j++)
+                for (int j = 0; j < NodeCount && adjacentIndex <= adjacentCount; j++)
                 {
                     // 节点i到节点j有弧
                     if (Matrix[i, j] != 0)
                     {
                         adjacent[adjacentIndex] = j;
+                        adjacentIndex++;
                     }
                 }
 
