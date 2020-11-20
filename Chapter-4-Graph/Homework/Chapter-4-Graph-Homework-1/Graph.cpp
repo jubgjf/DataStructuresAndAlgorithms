@@ -1,7 +1,7 @@
 #include <iostream>
 #include "header.h"
 
-Graph* InitGraph(int matrix[10][10], int nodeCount)
+Graph* InitGraph(int (*matrix)[16], int nodeCount)
 {
     Graph* graph = new Graph;
 

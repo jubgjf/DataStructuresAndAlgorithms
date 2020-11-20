@@ -1,37 +1,109 @@
 #include "header.h"
 
+int ManStatus(int statusNum)
+{
+    return statusNum >> 3 & 1;
+}
+
+int WolfStatus(int statusNum)
+{
+    return statusNum >> 2 & 1;
+}
+
+int SheepStatus(int statusNum)
+{
+    return statusNum >> 1 & 1;
+}
+
+int CabbageStatus(int statusNum)
+{
+    return statusNum & 1;
+}
+
+bool IsLegal(int status1Num, int status2Num)
+{
+    // 人必须改变位置
+    if (ManStatus(status1Num) == ManStatus(status2Num))
+    {
+        return false;
+    }
+
+    // 狼和羊共存时，人必须在场
+    if (WolfStatus(status1Num) == SheepStatus(status1Num))
+    {
+        if (WolfStatus(status1Num) != ManStatus(status1Num))
+        {
+            return false;
+        }
+    }
+    if (WolfStatus(status2Num) == SheepStatus(status2Num))
+    {
+        if (WolfStatus(status2Num) != ManStatus(status2Num))
+        {
+            return false;
+        }
+    }
+
+    // 菜和羊共存时，人必须在场
+    if (CabbageStatus(status1Num) == SheepStatus(status1Num))
+    {
+        if (CabbageStatus(status1Num) != ManStatus(status1Num))
+        {
+            return false;
+        }
+    }
+    if (CabbageStatus(status2Num) == SheepStatus(status2Num))
+    {
+        if (CabbageStatus(status2Num) != ManStatus(status2Num))
+        {
+            return false;
+        }
+    }
+
+    // 一次最多改变两个位置
+    if (WolfStatus(status1Num) != WolfStatus(status2Num) &&
+        SheepStatus(status1Num) != SheepStatus(status2Num) &&
+        CabbageStatus(status1Num) == CabbageStatus(status2Num))
+    {
+        return false;
+    }
+    else if (WolfStatus(status1Num) != WolfStatus(status2Num) &&
+        SheepStatus(status1Num) == SheepStatus(status2Num) &&
+        CabbageStatus(status1Num) != CabbageStatus(status2Num))
+    {
+        return false;
+    }
+    else if (WolfStatus(status1Num) == WolfStatus(status2Num) &&
+        SheepStatus(status1Num) != SheepStatus(status2Num) &&
+        CabbageStatus(status1Num) != CabbageStatus(status2Num))
+    {
+        return false;
+    }
+    else if (WolfStatus(status1Num) != WolfStatus(status2Num) &&
+        SheepStatus(status1Num) != SheepStatus(status2Num) &&
+        CabbageStatus(status1Num) != CabbageStatus(status2Num))
+    {
+        return false;
+    }
+
+    return true;
+}
+
 void TestHomework1()
 {
-    // 设人、狼、羊、菜在家则为T，在对岸则为F
-    // 根据狼吃羊、羊吃草，TFFX、FTTX、TXFF、FXTT不存在
-    // 则只需找到TTTT -> FFFF的最短路径
-    //
-    //          0    1    2    3    4    5    6    7    8    9
-    //        TTTT TTTF TTFT TFTT TFTF FTFT FTFF FFTF FFFT FFFF
-    //        -------------------------------------------------
-    // 0 TTTT|                           1                     
-    // 1 TTTF|                                1    1           
-    // 2 TTFT|                           1    1         1      
-    // 3 TFTT|                                     1    1      
-    // 4 TFTF|                                     1         1 
-    // 5 FTFT|  1         1                                    
-    // 6 FTFF|       1    1                                    
-    // 7 FFTF|       1         1    1                          
-    // 8 FFFT|            1    1                               
-    // 9 FFFF|                      1                          
+    int matrix[16][16] = {0};
 
-    int matrix[10][10] = {
-        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
-        {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 1, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 0, 1},
-        {1, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-        {0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-        {0, 1, 0, 1, 1, 0, 0, 0, 0, 0},
-        {0, 0, 1, 1, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-    };
-    Graph* graph = InitGraph(matrix, 10);
-    Dijkstra(graph, 0, 9);
+    for (int i = 0; i < 16; ++i)
+    {
+        for (int j = 0; j < 16; ++j)
+        {
+            if (IsLegal(i, j))
+            {
+                matrix[i][j] = 1;
+            }
+        }
+    }
+
+    Graph* graph = InitGraph(matrix, 16);
+    Dijkstra(graph, 0, 15);
 }

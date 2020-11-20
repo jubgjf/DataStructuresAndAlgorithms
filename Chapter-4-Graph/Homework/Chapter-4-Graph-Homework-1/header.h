@@ -31,7 +31,7 @@ struct Graph
  * \param nodeCount 图的节点数量
  * \return 返回图
  */
-Graph* InitGraph(int matrix[10][10], int nodeCount);
+Graph* InitGraph(int (*matrix)[16], int nodeCount);
 
 /**
  * \brief Dijkstra算法寻找最短路径
