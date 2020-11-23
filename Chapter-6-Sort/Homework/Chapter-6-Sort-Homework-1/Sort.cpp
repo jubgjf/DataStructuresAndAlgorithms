@@ -76,31 +76,92 @@ void SelectSort(int array[], int startIndex, int endIndex)
     }
 }
 
-int ParentIndex(int index)
+void HeapInsert(int heap[], int& lastIndex, int insertData)
 {
-    return (index + 1) / 2 - 1;
+    heap[lastIndex + 1] = insertData;
+    lastIndex++;
+    int currentIndex = lastIndex;
+
+    while (heap[currentIndex] < heap[currentIndex / 2] && currentIndex != 1)
+    {
+        Swap(heap[currentIndex], heap[currentIndex / 2]);
+        currentIndex /= 2;
+    }
 }
 
-int LeftChildIndex(int index)
+int LeftChildIndex(int index, int lastIndex)
 {
-    return 2 * index + 1;
+    return index * 2 > lastIndex ? -1 : index * 2;
 }
 
-int RightChildIndex(int index)
+int RightChildIndex(int index, int lastIndex)
 {
-    return 2 * index + 2;
+    return index * 2 + 1 > lastIndex ? -1 : index * 2 + 1;
 }
 
-int SwapMax(int array[], int parentIndex, int leftChildIndex, int rightChildIndex)
+int HeapPop(int heap[], int& lastIndex)
 {
+    Swap(heap[1], heap[lastIndex]);
+    lastIndex--;
+
+    int currentIndex = 1;
+    while (true)
+    {
+        if (LeftChildIndex(currentIndex, lastIndex) == -1) // 没有左孩子
+        {
+            break;
+        }
+        else if (RightChildIndex(currentIndex, lastIndex) == -1) // 有左孩子，没有右孩子
+        {
+            if (heap[currentIndex] > heap[LeftChildIndex(currentIndex, lastIndex)])
+            {
+                Swap(heap[currentIndex], heap[LeftChildIndex(currentIndex, lastIndex)]);
+                currentIndex = currentIndex * 2;
+            }
+            else
+            {
+                break;
+            }
+        }
+        else // 有左孩子、右孩子
+        {
+            if (heap[currentIndex] < heap[LeftChildIndex(currentIndex, lastIndex)] &&
+                heap[currentIndex] < heap[RightChildIndex(currentIndex, lastIndex)])
+            {
+                break;
+            }
+            else if (heap[LeftChildIndex(currentIndex, lastIndex)] <
+                heap[RightChildIndex(currentIndex, lastIndex)])
+            {
+                Swap(heap[currentIndex], heap[LeftChildIndex(currentIndex, lastIndex)]);
+                currentIndex = currentIndex * 2;
+            }
+            else if (heap[LeftChildIndex(currentIndex, lastIndex)] >=
+                heap[RightChildIndex(currentIndex, lastIndex)])
+            {
+                Swap(heap[currentIndex], heap[RightChildIndex(currentIndex, lastIndex)]);
+                currentIndex = currentIndex * 2 + 1;
+            }
+        }
+    }
+
+    return heap[lastIndex + 1];
 }
 
 void HeapSort(int array[], int startIndex, int endIndex)
 {
-    // 构建大顶堆
+    // 构建小顶堆
+    int heap[1000];
+    int heapLastIndex = 0;
+    for (int i = startIndex; i < endIndex; ++i)
+    {
+        HeapInsert(heap, heapLastIndex, array[i]);
+    }
 
-
-    // 将根调整到数组最后，从而由小到大排序
+    for (int i = 0; heapLastIndex >= 1; ++i)
+    {
+        array[i] = HeapPop(heap, heapLastIndex);
+    }
 }
 
 void InsertSort(int array[], int startIndex, int endIndex)

@@ -40,35 +40,36 @@ void QuickSort(int array[], int startIndex, int endIndex);
 void SelectSort(int array[], int startIndex, int endIndex);
 
 /**
- * \brief 获取在以0为开始的数组形成的堆中，某个节点的父节点下标
- * \param index 节点下标
- * \return 返回父节点下标
+ * \brief 向小顶堆中插入元素
+ * \param heap 小顶堆
+ * \param lastIndex 堆数组的最后一个元素的下标
+ * \param insertData 待插入的元素
  */
-int ParentIndex(int index);
+void HeapInsert(int heap[], int& lastIndex, int insertData);
 
 /**
- * \brief 获取在以0为开始的数组形成的堆中，某个节点的左孩子下标
- * \param index 节点下标
- * \return 返回左孩子下标
+ * \brief 获取左孩子下标
+ * \param index 当前下标
+ * \param lastIndex 堆的最后一个元素的下标
+ * \return 获取左孩子下标，没有左孩子则返回-1
  */
-int LeftChildIndex(int index);
+int LeftChildIndex(int index, int lastIndex);
 
 /**
- * \brief 获取在以0为开始的数组形成的堆中，某个节点的右孩子下标
- * \param index 节点下标
- * \return 返回右孩子下标
+ * \brief 获取右孩子下标
+ * \param index 当前下标
+ * \param lastIndex 堆的最后一个元素的下标
+ * \return 获取右孩子下标，没有右孩子则返回-1
  */
-int RightChildIndex(int index);
+int RightChildIndex(int index, int lastIndex);
 
 /**
- * \brief 检查父节点和两个儿子节点，将最大的数放在父节点
- * \param array 数组
- * \param parentIndex 父节点下标
- * \param leftChildIndex 左孩子下标
- * \param rightChildIndex 右孩子下标，-1代表没有右孩子
- * \return 返回被交换的孩子的下标
+ * \brief 从小顶堆中弹出根
+ * \param heap 小顶堆
+ * \param lastIndex 堆数组的最后一个元素的下标
+ * \return 弹出的元素
  */
-int SwapMax(int array[], int parentIndex, int leftChildIndex, int rightChildIndex);
+int HeapPop(int heap[], int& lastIndex);
 
 /**
  * \brief 冒泡排序
