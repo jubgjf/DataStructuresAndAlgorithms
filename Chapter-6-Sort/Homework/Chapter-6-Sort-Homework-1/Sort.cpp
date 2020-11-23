@@ -168,7 +168,7 @@ void InsertSort(int array[], int startIndex, int endIndex)
 {
     for (int i = startIndex + 1; i < endIndex + 1; ++i)
     {
-        for (int j = i; array[j] < array[j - 1]; --j)
+        for (int j = i; j - 1 >= 0 && array[j] < array[j - 1]; --j)
         {
             Swap(array[j], array[j - 1]);
         }
@@ -177,4 +177,14 @@ void InsertSort(int array[], int startIndex, int endIndex)
 
 void ShellSort(int array[], int startIndex, int endIndex)
 {
+    for (int gap = (endIndex + 1 - startIndex) / 2; gap > 0; gap /= 2)
+    {
+        for (int i = gap; i < endIndex + 1; ++i)
+        {
+            for (int j = i; j - gap >= 0 && array[j] < array[j - gap]; j -= gap)
+            {
+                Swap(array[j], array[j - gap]);
+            }
+        }
+    }
 }

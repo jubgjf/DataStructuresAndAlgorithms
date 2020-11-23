@@ -9,7 +9,7 @@ int main()
     // SelectSort(array, 0, 17);
     // HeapSort(array, 0, 17);
     // InsertSort(array, 0, 17);
-    // ShellSort(array, 0, 17);
+    ShellSort(array, 0, 17);
 
     PrintArray(array, 0, 17);
 }
