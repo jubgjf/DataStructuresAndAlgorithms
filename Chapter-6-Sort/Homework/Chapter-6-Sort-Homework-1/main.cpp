@@ -1,15 +1,25 @@
+#include <ctime>
+#include <iostream>
 #include "header.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-    int array[] = {3, 2, 6, 4, 78, 34, 76, 2, 12, 56, 23, 7, 0, -3, -12, 43, 12, 35};
+    // TODO 用文件读取数据
 
-    // BubbleSort(array, 0, 17);
-    // QuickSort(array, 0, 17);
-    // SelectSort(array, 0, 17);
-    // HeapSort(array, 0, 17);
-    // InsertSort(array, 0, 17);
-    ShellSort(array, 0, 17);
+    clock_t begin, end;
+    int array[1000] = {0};
+    for (int i = 0; i < argc - 1; ++i) { array[i] = atoi(argv[i + 1]); }
 
-    PrintArray(array, 0, 17);
+    begin = clock();
+    // BubbleSort(array, 0, argc-1);
+    // QuickSort(array, 0, argc-1);
+    // SelectSort(array, 0, argc-1);
+    // HeapSort(array, 0, argc-1);
+    // InsertSort(array, 0, argc-1);
+    // ShellSort(array, 0, argc-1);
+    end = clock();
+
+    PrintArray(array, 0, argc - 1);
+    double cost = (static_cast<double>(end) - begin) / CLOCKS_PER_SEC;
+    printf("Time cost:%lf", cost);
 }
