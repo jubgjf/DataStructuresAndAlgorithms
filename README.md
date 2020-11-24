@@ -99,4 +99,11 @@
 
 |内容|完成情况|链接|
 |:-:|:-:|:-:|
-|排序算法|:grey_exclamation:|[作业一](./Chapter-6-Sort/Homework/Chapter-6-Sort-Homework-1)|
+|排序算法|:x:|[作业一](./Chapter-6-Sort/Homework/Chapter-6-Sort-Homework-1)|
+|排序算法|:heavy_check_mark:|[作业一](./Chapter-6-Sort/Homework/Chapter-6-Sort-Homework-1-CSharp)|
+
+## 第七章 外排序
+
+|内容|完成情况|链接|
+|:-:|:-:|:-:|
+|归并排序|:grey_exclamation:|[练习一](./Chapter-7-ExternalSort/Practice/Chapter-7-ExternalSort-Practice-1)|
