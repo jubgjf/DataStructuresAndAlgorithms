@@ -23,6 +23,11 @@ namespace Chapter_6_Sort_Homework_1_CSharp
             }
         }
 
+        /// <summary>
+        /// 从文件中读取数组
+        /// </summary>
+        /// <param name="fileName">文件名</param>
+        /// <returns>返回数组</returns>
         public static int[] ReadArrayFromFile(string fileName)
         {
             try
