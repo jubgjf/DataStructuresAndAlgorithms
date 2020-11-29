@@ -1,4 +1,7 @@
-﻿namespace Chapter_6_Sort_Homework_1_CSharp
+﻿using System;
+using System.Collections;
+
+namespace Chapter_6_Sort_Homework_1_CSharp
 {
     public static class Sort
     {
@@ -249,6 +252,105 @@
                         Swap(ref array[j], ref array[j - gap]);
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// 获取数组中的最大数
+        /// </summary>
+        /// <param name="array">数组</param>
+        /// <returns>返回最大值</returns>
+        private static int GetMax(int[] array)
+        {
+            int max = array[0];
+            foreach (int i in array)
+            {
+                if (max < i)
+                {
+                    max = i;
+                }
+            }
+
+            return max;
+        }
+
+        /// <summary>
+        /// 获取数组中的最小数
+        /// </summary>
+        /// <param name="array">数组</param>
+        /// <returns>返回最小值</returns>
+        private static int GetMin(int[] array)
+        {
+            int min = array[0];
+            foreach (int i in array)
+            {
+                if (min > i)
+                {
+                    min = i;
+                }
+            }
+
+            return min;
+        }
+
+        /// <summary>
+        /// 获取一个数的位数
+        /// </summary>
+        /// <param name="num">数字</param>
+        /// <returns>返回num的位数</returns>
+        private static int GetDigits(int num)
+        {
+            return num == 0 ? 0 : Convert.ToInt32(Math.Log10(num)) + 1;
+        }
+
+        /// <summary>
+        /// 基数排序
+        /// </summary>
+        /// <param name="array">数组</param>
+        public static void RadixSort(ref int[] array)
+        {
+            // 将数组整体平移为非负数组
+            int min = GetMin(array);
+            int[] unsignedArray = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                unsignedArray[i] = array[i] - min;
+            }
+
+            int max = GetMax(unsignedArray);
+            int maxDigit = GetDigits(max);
+
+            // 按照数位分成10个桶
+            Queue[] bucket = new Queue[10];
+            for (int i = 0; i < 10; i++)
+            {
+                bucket[i] = new Queue();
+            }
+
+            for (int i = 0; i < maxDigit; i++)
+            {
+                // 放入桶
+                foreach (int num in unsignedArray)
+                {
+                    bucket[(num / (int) Math.Pow(10, i)) % 10].Enqueue(num);
+                }
+
+                // 从桶弹出
+                int index = 0;
+                foreach (Queue queue in bucket)
+                {
+                    while (queue.Count > 0)
+                    {
+                        unsignedArray[index] = Convert.ToInt32(queue.Dequeue());
+                        index++;
+                    }
+                }
+            }
+
+            // 将非负数组平移回原始数组
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = unsignedArray[i] + min;
             }
         }
     }

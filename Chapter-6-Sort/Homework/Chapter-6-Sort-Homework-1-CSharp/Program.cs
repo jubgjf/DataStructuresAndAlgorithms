@@ -6,7 +6,7 @@ namespace Chapter_6_Sort_Homework_1_CSharp
     {
         static void Main(string[] args)
         {
-            // File.WriteRandomIntToFile("array.txt");
+            File.WriteRandomIntToFile("array.txt");
 
             int[] array = File.ReadArrayFromFile("array.txt");
 
@@ -18,6 +18,7 @@ namespace Chapter_6_Sort_Homework_1_CSharp
             // Sort.HeapSort(ref array);
             // Sort.InsertSort(ref array);
             // Sort.ShellSort(ref array);
+            // Sort.RadixSort(ref array);
 
             DateTime endTime = DateTime.Now; // 结束计时
 
